@@ -3,10 +3,125 @@
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
-
 @theme {
   /* Her tilføjes theme variable // tokens */
+
+  /* Cutom colors */
+  --color-blue-50: #EAF5FF;
+  --color-blue-100: #DAECFF;
+  --color-blue-200: #BBDBFF;
+  --color-blue-300: #92C2FF;
+  --color-blue-400: #679CFF;
+  --color-blue-500: #679CFF;
+  --color-blue-600: #234BFF;
+  --color-blue-700: #2445EB;
+  --color-blue-800: #1735BC;
+  --color-blue-900: #1C3593;
+  --color-blue-950: #111D55;
+
+  --color-darkblue-50: #F1F3FF;
+  --color-darkblue-100: #E6E9FF;
+  --color-darkblue-200: #D0D6FF;
+  --color-darkblue-300: #AAB3FF;
+  --color-darkblue-400: #7980FF;
+  --color-darkblue-500: #4544FF;
+  --color-darkblue-600: #2B1EFF;
+  --color-darkblue-700: #1A0CF5;
+  --color-darkblue-800: #1509CE;
+  --color-darkblue-900: #140AA8;
+  --color-darkblue-950: #060372;
+
+  --color-orange-50: #FFF6EC;
+  --color-orange-100: #FFEAD3;
+  --color-orange-200: #FFD0A5;
+  --color-orange-300: #FFAF6D;
+  --color-orange-400: #FF8132;
+  --color-orange-500: #FF5E0A;
+  --color-orange-600: #FF4400;
+  --color-orange-700: #CC2E02;
+  --color-orange-800: #A1250B;
+  --color-orange-900: #82210C;
+  --color-orange-950: #460D04;
+
+  --color-yellow-50: #FFFEEA;
+  --color-yellow-100: #FFFAC5;
+  --color-yellow-200: #FFF685;
+  --color-yellow-300: #FFEA46;
+  --color-yellow-400: #FFDB1B;
+  --color-yellow-500: #FFBB00;
+  --color-yellow-600: #E29000;
+  --color-yellow-700: #BB6502;
+  --color-yellow-800: #984E08;
+  --color-yellow-900: #7C400B;
+  --color-yellow-950: #482100;
+
+  --color-neutrals-50: #FEFEFE;
+  --color-neutrals-100: #EFEFEF;
+  --color-neutrals-200: #DCDCDC;
+  --color-neutrals-300: #BDBDBD;
+  --color-neutrals-400: #989898;
+  --color-neutrals-500: #7C7C7C;
+  --color-neutrals-600: #656565;
+  --color-neutrals-700: #525252;
+  --color-neutrals-800: #464646;
+  --color-neutrals-900: #3D3D3D;
+  --color-neutrals-950: #292929;
+  --color-neutrals-1000: #000000;
+
+  /* Font */
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-syne: "Syne", sans-serif;
+
+  --text-h1-desktop: 3.812rem;
+  --linehight-h1-desktop: 4.575rem;
+
+  --text-h1-mobile: 3.062rem;
+  --linehight-h1-mobile: 2.925rem;
+
+  --text-h2-desktop: 3.062rem;
+  --linehight-h2-desktop: 3.675rem;
+
+  --text-h2-mobile: 2.438rem;
+  --linehight-h2-mobile: 2.325rem;
+
+  --text-h3-desktop: 2.438rem;
+  --linehight-h3-desktop: 2.925rem;
+
+  --text-h3-mobile: 1.938rem;
+  --linehight-h3-mobile: 1.875rem;
+
+  --text-h4-desktop: 1.938rem;
+  --linehight-h4-desktop: 2.325rem;
+
+  --text-h4-mobile: 1.25rem;
+  --linehight-h4-mobile: 1.5rem;
+
+  --text-h5-desktop: 1.562rem;
+  --linehight-h5-desktop: 1.875rem;
+
+  --text-h5-mobile: 1rem;
+  --linehight-h5-mobile: 1.2rem;
+
+  --text-p-desktop: 1rem;
+  --linehight-p-desktop: 1.2rem;
+
+  --text-p-mobile: 0.875rem;
+  --linehight-p-mobile: 1.05rem;
+
+  --text-ps-desktop: 0.812rem;
+  --linehight-ps-desktop: 0.975rem;
+
+  --text-ps-mobile: 0.625rem;
+  --linehight-ps-mobile: 0.75rem;
+
+  --text-a-desktop: 1rem;
+  --linehight-a-desktop: 1.2rem;
+
+  --text-a-mobile: 0.875rem;
+  --linehight-a-mobile: 1.05rem;
+
 }
+
 
 @layer base {
   *,
@@ -14,11 +129,131 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-neutrals-200, currentColor);
   }
 }
 
 @layer components{
+  h1 {
+    font-family: var(--font-syne);
+    font-weight: 600;
+    color: var(--color-neutrals-1000);
+    font-size: var(--text-h1-mobile);
+    line-height: var(--linehight-h1-mobile);
+  }
+
+  @screen md {
+    h1 {
+      font-size: var(--text-h1-desktop);
+      line-height: var(--linehight-h1-desktop);
+    }
+  }
+
+    h2 {
+      font-family: var(--font-syne);
+      font-weight: 600;
+      color: var(--color-neutrals-1000);
+      font-size: var(--text-h2-mobile);
+      line-height: var(--linehight-h2-mobile);
+    }
+  
+    @screen md {
+      h2 {
+        font-size: var(--text-h2-desktop);
+        line-height: var(--linehight-h2-desktop);
+      }
+    }
+
+      h3 {
+        font-family: var(--font-syne);
+        font-weight: 600;
+        color: var(--color-neutrals-1000);
+        font-size: var(--text-h3-mobile);
+        line-height: var(--linehight-h3-mobile);
+      }
+    
+      @screen md {
+        h3 {
+          font-size: var(--text-h3-desktop);
+          line-height: var(--linehight-h3-desktop);
+        }
+      }
+
+        h4 {
+          font-family: var(--font-syne);
+          font-weight: 600;
+          color: var(--color-neutrals-1000);
+          font-size: var(--text-h4-mobile);
+          line-height: var(--linehight-h4-mobile);
+        }
+      
+        @screen md {
+          h4 {
+            font-size: var(--text-h4-desktop);
+            line-height: var(--linehight-h4-desktop);
+          }
+        }
+
+          h5 {
+            font-family: var(--font-syne);
+            font-weight: 600;
+            color: var(--color-neutrals-1000);
+            font-size: var(--text-h5-mobile);
+            line-height: var(--linehight-h5-mobile);
+          }
+        
+          @screen md {
+            h5 {
+              font-size: var(--text-h5-desktop);
+              line-height: var(--linehight-h5-desktop);
+            }
+          }
+
+
+            p {
+              font-family: var(--font-urbanist);
+              font-weight: 400;
+              color: var(--color-neutrals-1000);
+              font-size: var(--text-p-mobile);
+              line-height: var(--linehight-p-mobile);
+            }
+          
+            @screen md {
+              p {
+                font-size: var(--text-p-desktop);
+                line-height: var(--linehight-p-desktop);
+              }
+            }
+
+              .ps {
+                font-family: var(--font-urbanist);
+                font-weight: 400;
+                color: var(--color-neutrals-1000);
+                font-size: var(--text-ps-mobile);
+                line-height: var(--linehight-ps-mobile);
+              }
+            
+              @screen md {
+                .ps {
+                  font-size: var(--text-ps-desktop);
+                  line-height: var(--linehight-ps-desktop);
+                }
+              }
+
+                a {
+                  font-family: var(--font-urbanist);
+                  font-weight: 400;
+                  color: var(--color-neutrals-1000);
+                  font-size: var(--text-a-mobile);
+                  line-height: var(--linehight-a-mobile);
+                }
+              
+                @screen md {
+                  a {
+                    font-size: var(--text-a-desktop);
+                    line-height: var(--linehight-a-desktop);
+                  }
+  }
 
 }
 @layer utilities{
