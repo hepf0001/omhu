@@ -56,18 +56,18 @@
   --color-yellow-900: #7C400B;
   --color-yellow-950: #482100;
 
-  --color-neutrals-50: #FEFEFE;
-  --color-neutrals-100: #EFEFEF;
-  --color-neutrals-200: #DCDCDC;
-  --color-neutrals-300: #BDBDBD;
-  --color-neutrals-400: #989898;
-  --color-neutrals-500: #7C7C7C;
-  --color-neutrals-600: #656565;
-  --color-neutrals-700: #525252;
-  --color-neutrals-800: #464646;
-  --color-neutrals-900: #3D3D3D;
-  --color-neutrals-950: #292929;
-  --color-neutrals-1000: #000000;
+  --color-neutral-50: #FEFEFE;
+  --color-neutral-100: #EFEFEF;
+  --color-neutral-200: #DCDCDC;
+  --color-neutral-300: #BDBDBD;
+  --color-neutral-400: #989898;
+  --color-neutral-500: #7C7C7C;
+  --color-neutral-600: #656565;
+  --color-neutral-700: #525252;
+  --color-neutral-800: #464646;
+  --color-neutral-900: #3D3D3D;
+  --color-neutral-950: #292929;
+  --color-neutral-1000: #000000;
 
   /* Font */
   --font-urbanist: "Urbanist", sans-serif;
