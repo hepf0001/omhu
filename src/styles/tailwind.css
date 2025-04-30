@@ -3,6 +3,8 @@
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
+@plugin "daisyui";
+
 
 @theme {
   /* Her tilføjes theme variable // tokens */
@@ -130,7 +132,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-neutrals-200, currentColor);
+    border-color: var(--color-neutral-200, currentColor);
   }
 }
 
@@ -138,7 +140,7 @@
   h1 {
     font-family: var(--font-syne);
     font-weight: 600;
-    color: var(--color-neutrals-1000);
+    color: var(--color-neutral-1000);
     font-size: var(--text-h1-mobile);
     line-height: var(--linehight-h1-mobile);
   }
@@ -153,7 +155,7 @@
     h2 {
       font-family: var(--font-syne);
       font-weight: 600;
-      color: var(--color-neutrals-1000);
+      color: var(--color-neutral-1000);
       font-size: var(--text-h2-mobile);
       line-height: var(--linehight-h2-mobile);
     }
@@ -168,7 +170,7 @@
       h3 {
         font-family: var(--font-syne);
         font-weight: 600;
-        color: var(--color-neutrals-1000);
+        color: var(--color-neutral-1000);
         font-size: var(--text-h3-mobile);
         line-height: var(--linehight-h3-mobile);
       }
@@ -183,7 +185,7 @@
         h4 {
           font-family: var(--font-syne);
           font-weight: 600;
-          color: var(--color-neutrals-1000);
+          color: var(--color-neutral-1000);
           font-size: var(--text-h4-mobile);
           line-height: var(--linehight-h4-mobile);
         }
@@ -198,7 +200,7 @@
           h5 {
             font-family: var(--font-syne);
             font-weight: 600;
-            color: var(--color-neutrals-1000);
+            color: var(--color-neutral-1000);
             font-size: var(--text-h5-mobile);
             line-height: var(--linehight-h5-mobile);
           }
@@ -214,7 +216,7 @@
             p {
               font-family: var(--font-urbanist);
               font-weight: 400;
-              color: var(--color-neutrals-1000);
+              color: var(--color-neutral-1000);
               font-size: var(--text-p-mobile);
               line-height: var(--linehight-p-mobile);
             }
@@ -229,7 +231,7 @@
               .ps {
                 font-family: var(--font-urbanist);
                 font-weight: 400;
-                color: var(--color-neutrals-1000);
+                color: var(--color-neutral-1000);
                 font-size: var(--text-ps-mobile);
                 line-height: var(--linehight-ps-mobile);
               }
@@ -244,7 +246,7 @@
                 a {
                   font-family: var(--font-urbanist);
                   font-weight: 400;
-                  color: var(--color-neutrals-1000);
+                  color: var(--color-neutral-1000);
                   font-size: var(--text-a-mobile);
                   line-height: var(--linehight-a-mobile);
                 }
