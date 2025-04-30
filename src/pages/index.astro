@@ -7,15 +7,91 @@ import thumbsup from "../assets/images/thumbsup.png";
 ---
 
 <MainLayout title="Titel">
-	<article>
-		<h5 class="md:text-h5-desktop text-h5-mobile">Lookbook 2025</h5>
-		<h1 class="md:text-h1-desktop text-h1-mobile">One sofa. Always evolving.</h1>
-		<h5 class="md:text-h5-desktop text-h5-mobile">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</h5>
+	<!------------------- Slider ------------------->
 
-		<Button>Meet the original Teddy</Button>
-		<Button>Explore colors</Button>
+	<div class="relative overflow-hidden w-full">
+		<!-- Slides -->
+		<input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked />
+		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
+			<img src="/hero_1.webp" class="block w-full h-screen object-cover" />
+			<div class="absolute inset-0 bg-neutrals-1000/20"></div>
+			<!-- Overlay -->
+		</div>
+		<input class="carousel-open hidden" type="radio" id="carousel-2" name="carousel" aria-hidden="true" />
+		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
+			<img src="/hero_2.webp" class="block w-full h-screen object-cover" />
+			<div class="absolute inset-0 bg-neutrals-1000/20"></div>
+			<!-- Overlay -->
+		</div>
+		<input class="carousel-open hidden" type="radio" id="carousel-3" name="carousel" aria-hidden="true" />
+		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
+			<img src="/hero_3.webp" class="block w-full h-screen object-cover" />
+			<div class="absolute inset-0 bg-neutrals-1000/20"></div>
+			<!-- Overlay -->
+		</div>
 
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odio cupiditate distinctio animi sunt exercitationem omnis sapiente architecto vero nemo nisi tempore minus tenetur eos, fuga, porro fugiat provident nostrum.</p>
-		<p class="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum reiciendis, rem magnam laboriosam aperiam eum, quaerat veritatis, autem praesentium tenetur maxime dolore enim aspernatur itaque alias fugit sint nesciunt placeat.</p>
-	</article>
+		<!-- Navigation Bullets -->
+		<div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+			<button type="button" class="carousel-bullet w-3 h-3 rounded-full border-2 border-white" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+			<button type="button" class="carousel-bullet w-3 h-3 rounded-full border-2 border-white" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+			<button type="button" class="carousel-bullet w-3 h-3 rounded-full border-2 border-white" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+		</div>
+
+		<!-- Shared Text Overlay -->
+		<article class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto p-5 z-20 content-center">
+			<div class="col-start-1 col-span-8">
+				<div class="pb-14">
+					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50 pb-5">Lookbook 2025</h5>
+					<h1 class="md:text-h1-desktop text-h1-mobile text-neutral-50 pb-5">One sofa. Always evolving.</h1>
+					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</h5>
+				</div>
+				<Button variant="primary" size="large">Meet the original Teddy</Button>
+				<Button variant="secondary" size="large">Explore colors</Button>
+			</div>
+		</article>
+	</div>
+
+	<style>
+		.carousel-open:checked + .carousel-item {
+			position: static;
+			opacity: 100;
+		}
+
+		.carousel-bullet {
+			background-color: transparent;
+			transition: background-color 0.3s ease;
+		}
+
+		.carousel-bullet[aria-current="true"] {
+			background-color: white;
+		}
+	</style>
+
+	<script>
+		const slides = document.querySelectorAll(".carousel-open");
+		const bullets = document.querySelectorAll(".carousel-bullet");
+		let currentSlide = 0;
+
+		// Funktion til at navigere til et bestemt slide
+		function goToSlide(index) {
+			slides[currentSlide].checked = false;
+			bullets.forEach((bullet) => bullet.setAttribute("aria-current", "false"));
+			currentSlide = index;
+			slides[currentSlide].checked = true;
+			bullets[currentSlide].setAttribute("aria-current", "true");
+		}
+
+		// Tilføj event listeners til alle bullets
+		bullets.forEach((bullet, index) => {
+			bullet.addEventListener("click", () => goToSlide(index));
+		});
+
+		// Automatisk skift af slides hvert 8. sekund
+		function nextSlide() {
+			currentSlide = (currentSlide + 1) % slides.length;
+			goToSlide(currentSlide);
+		}
+
+		setInterval(nextSlide, 8000); // Skift slide hvert 8. sekund
+	</script>
 </MainLayout>
