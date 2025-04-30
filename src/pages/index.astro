@@ -8,7 +8,6 @@ import thumbsup from "../assets/images/thumbsup.png";
 
 <MainLayout title="Titel">
 	<!------------------- Slider ------------------->
-
 	<div class="relative overflow-hidden w-full">
 		<!-- Slides -->
 		<input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked />
@@ -51,7 +50,21 @@ import thumbsup from "../assets/images/thumbsup.png";
 		</article>
 	</div>
 
+	<!------------------- Teddy Plus ------------------->
+	<section class="max-w-7xl mx-auto p-5">
+		<div class="md:pt-20 pt-10">
+			<div class="p-6 flex items-center h-96 sticky top-0">
+				<div class="grid grid-cols-12">
+					<h1 class="md:text-h1-desktop text-h3-mobile text-center col-start-1 md:col-start-4 col-span-12 md:col-span-6">Introducing Teddy Plus – the three-seater designed for ultimate comfort and timeless style.</h1>
+				</div>
+			</div>
+			<img class="sticky top-0" src="/teddy_plus_blue.webp" alt="Teddy Plus blue" />
+			<!-- <div class="p-6 flex items-center justify-end h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/teddy_plus_blue.webp')"></div>-->
+		</div>
+	</section>
+
 	<style>
+		/**************** Slider ****************/
 		.carousel-open:checked + .carousel-item {
 			position: static;
 			opacity: 100;
@@ -68,6 +81,10 @@ import thumbsup from "../assets/images/thumbsup.png";
 	</style>
 
 	<script>
+		/* Import af Motion One biblioteket */
+		import { animate, stagger, inView, scroll, timeline } from "motion";
+
+		/**************** Slider ****************/
 		const slides = document.querySelectorAll(".carousel-open");
 		const bullets = document.querySelectorAll(".carousel-bullet");
 		let currentSlide = 0;
