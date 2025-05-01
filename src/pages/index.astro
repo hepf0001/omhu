@@ -69,12 +69,17 @@ import thumbsup from "../assets/images/thumbsup.png";
 			<p>Whether it’s lounging on the sofa, sharing stories with friends, or unwinding in a cozy bed at the end of the day, Teddy flexes to suit your needs. Seamlessly shifting from one function to the next.</p>
 		</div>
 	</section>
-	<figure class="diff aspect-16/9" tabindex="0">
+
+	<figure class="grid diff aspect-16/9" tabindex="0">
 		<div class="diff-item-1" role="img" tabindex="0">
-			<img alt="daisy" src="/before_after_bed.png" />
+			<img alt="Teddy bed" src="/before_after_bed.webp" />
+			<div class="absolute inset-0 bg-neutral-1000/20"></div>
+			<h4 class="content-end py-3 md:py-5 pl-5 md:pl-28">Bed</h4>
 		</div>
-		<div class="diff-item-2" role="img">
-			<img alt="daisy" src="/before_after_sofa.png" />
+		<div class="grid diff-item-2" role="img">
+			<img alt="Teddy sofa" src="/before_after_sofa.webp" />
+			<div class="absolute inset-0 bg-neutral-1000/20"></div>
+			<h4 class="content-end text-end py-3 md:py-5 pr-5 md:pr-28">Sofa</h4>
 		</div>
 		<div class="diff-resizer"></div>
 	</figure>
@@ -93,6 +98,9 @@ import thumbsup from "../assets/images/thumbsup.png";
 
 		.carousel-bullet[aria-current="true"] {
 			background-color: white;
+		}
+		.diff-resizer::before {
+			background-color: white !important; /* eller en anden farve */
 		}
 	</style>
 
