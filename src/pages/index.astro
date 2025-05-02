@@ -6,8 +6,9 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 
-<MainLayout title="Titel">
+<MainLayout title="Lookbook 2025">
 	<!------------------- Slider/Hero ------------------->
+
 	<div class="relative overflow-hidden w-full">
 		<!-- Slides -->
 		<input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked />
@@ -39,9 +40,9 @@ import thumbsup from "../assets/images/thumbsup.png";
 		<!-- Shared Text Overlay -->
 		<article class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto p-5 z-20 content-center">
 			<div class="col-start-1 col-span-12 md:col-span-8">
-				<div class="pb-6 md:pb-14">
-					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50 pb-2 md:pb-5">Lookbook 2025</h5>
-					<h1 class="md:text-h1-desktop text-h3-mobile text-neutral-50 pb-2 md:pb-5">One sofa. Always evolving.</h1>
+				<div class="pb-14">
+					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50 pb-5">Lookbook 2025</h5>
+					<h1 class="md:text-h1-desktop text-h3-mobile text-neutral-50 pb-5">One sofa. Always evolving.</h1>
 					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</h5>
 				</div>
 				<Button variant="primary" size="medium md:large">Meet the original Teddy</Button>
@@ -129,64 +130,31 @@ import thumbsup from "../assets/images/thumbsup.png";
 						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50" x-text="item.title"></h3>
 						<p class="text-neutral-50" x-text="item.description"></p>
 					</div>
+
+					<style>
+						/**************** Slider/Hero ****************/
+						.carousel-open:checked + .carousel-item {
+							position: static;
+							opacity: 100;
+						}
+
+						.carousel-bullet {
+							background-color: transparent;
+							transition: background-color 0.3s ease;
+						}
+
+						.carousel-bullet[aria-current="true"] {
+							background-color: white;
+						}
+
+						/**************** Accordion ****************/
+						.md\:flex-grow {
+							flex: 1 1 auto;
+						}
+					</style>
+					<script src="/src/index.js" type="module"></script>
 				</div>
 			</template>
 		</div>
-	</section>
-
-	<style>
-		/**************** Slider/Hero ****************/
-		.carousel-open:checked + .carousel-item {
-			position: static;
-			opacity: 100;
-		}
-
-		.carousel-bullet {
-			background-color: transparent;
-			transition: background-color 0.3s ease;
-		}
-
-		.carousel-bullet[aria-current="true"] {
-			background-color: white;
-		}
-
-		/**************** Accordion ****************/
-		.md\:flex-grow {
-			flex: 1 1 auto;
-		}
-	</style>
-</MainLayout>
-
-<script>
-	/* Import af Motion One biblioteket */
-	import { animate, stagger, inView, scroll, timeline } from "motion";
-
-	/**************** Slider/Hero ****************/
-	const slides = document.querySelectorAll(".carousel-open");
-	const bullets = document.querySelectorAll(".carousel-bullet");
-	let currentSlide = 0;
-
-	// Funktion til at navigere til et bestemt slide
-	function goToSlide(index) {
-		slides[currentSlide].checked = false;
-		bullets.forEach((bullet) => bullet.setAttribute("aria-current", "false"));
-		currentSlide = index;
-		slides[currentSlide].checked = true;
-		bullets[currentSlide].setAttribute("aria-current", "true");
-	}
-
-	// Tilføj event listeners til alle bullets
-	bullets.forEach((bullet, index) => {
-		bullet.addEventListener("click", () => goToSlide(index));
-	});
-
-	// Automatisk skift af slides hvert 8. sekund
-	function nextSlide() {
-		currentSlide = (currentSlide + 1) % slides.length;
-		goToSlide(currentSlide);
-	}
-
-	setInterval(nextSlide, 8000); // Skift slide hvert 8. sekund
-
-	/**************** Accordion ****************/
-</script>
+	</section></MainLayout
+>
