@@ -126,8 +126,8 @@ import thumbsup from "../assets/images/thumbsup.png";
 
 					<!-- Content -->
 					<div class="absolute bottom-0 p-5 w-full flex flex-col justify-end space-y-3 z-10" x-show="active === index" x-transition>
-						<h3 class="text-2xl font-semibold" x-text="item.title"></h3>
-						<p class="text-sm" x-text="item.description"></p>
+						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50" x-text="item.title"></h3>
+						<p class="text-neutral-50" x-text="item.description"></p>
 					</div>
 				</div>
 			</template>
@@ -135,6 +135,22 @@ import thumbsup from "../assets/images/thumbsup.png";
 	</section>
 
 	<style>
+		/**************** Slider/Hero ****************/
+		.carousel-open:checked + .carousel-item {
+			position: static;
+			opacity: 100;
+		}
+
+		.carousel-bullet {
+			background-color: transparent;
+			transition: background-color 0.3s ease;
+		}
+
+		.carousel-bullet[aria-current="true"] {
+			background-color: white;
+		}
+
+		/**************** Accordion ****************/
 		.md\:flex-grow {
 			flex: 1 1 auto;
 		}
