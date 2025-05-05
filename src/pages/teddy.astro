@@ -6,22 +6,50 @@ import Link from "../components/Link.astro";
 
 <MainLayout title="Lookbook 2025">
     <!------------------- Teddy Hero ------------------->
-    <section class="grid grid-cols-1 md:grid-cols-2 h-screen">
-        <!-- Venstre billede (stort) -->
-        <div class="h-[50vh] md:h-full">
-            <img class="w-full h-full object-cover" src="/hero_2.webp" alt="Teddy brown" />
+    <section class="grid md:grid-cols-2 relative">
+        <!-- Venstre (eller top på mobil): Billede -->
+        <div class="relative">
+            <img class="object-cover h-[75vh] md:h-screen w-full" src="/hero_2.webp" alt="Teddy brown" />
+            <div class="absolute inset-0 bg-neutral-1000/20"></div>
         </div>
 
-        <!-- Højre: to billeder stablet -->
-        <div class="grid grid-rows-2 h-[100vh]">
-            <div class="h-[50vh] md:h-full">
-                <img class="w-full h-full object-cover" src="/compact_and_stylish.webp" alt="Teddy sage" />
+        <!-- Tekstoverlay -->
+        <div class="absolute w-full left-0 right-0 p-5 max-w-7xl mx-auto
+                    top-[75%] translate-y-[-100%] md:top-auto md:bottom-0 md:translate-y-0 flex md:items-end">
+            <div class="grid grid-cols-12 py-0 md:py-10">
+                <div class="col-span-12 md:col-span-6 pr-0 md:pr-10">
+                    <h3 class="text-neutral-50 pb-2.5 md:pb-5">Teddy</h3>
+                    <h5 class="text-neutral-50 pb-2.5 md:pb-5">12.850,00 DKK</h5>
+                    <p class="text-neutral-50 pb-2.5 md:pb-5">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</p>
+                    <a href="https://omhucph.com/products/teddy">
+                        <Button variant="primary" size="medium md:large">Buy now</Button>
+                    </a>
+                </div>
             </div>
-            <div class="h-[50vh] md:h-full">
-                <img class="w-full h-full object-cover" src="/hero_3.webp" alt="Teddy mustard" />
+        </div>
+
+        <!-- Højre (eller bund på mobil): To billeder -->
+        <div class="grid grid-cols-2 md:grid-cols-1 flex-1">
+            <div class="relative">
+                <img class="object-cover h-[25vh] md:h-[50vh] w-full" src="/compact_and_stylish.webp" alt="Teddy sage" />
+                <div class="absolute inset-0 bg-neutral-1000/20"></div>
+            </div>
+            <div class="relative">
+                <img class="object-cover h-[25vh] md:h-[50vh] w-full" src="/hero_3.webp" alt="Teddy mustard" />
+                <div class="absolute inset-0 bg-neutral-1000/20"></div>
             </div>
         </div>
     </section>
+
+    <!------------------- Color ------------------->
+
+    <!------------------- Dimensions ------------------->
+
+    <!------------------- Function ------------------->
+
+    <!------------------- FAQ ------------------->
+
+    <!------------------- You might also like ------------------->
 
     <style></style>
 </MainLayout>
