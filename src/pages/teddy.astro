@@ -1,0 +1,21 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+---
+
+<MainLayout title="Lookbook 2025">
+    <!------------------- Teddy Hero ------------------->
+    <section class="grid grid-cols-12 h-screen">
+        <!-- Venstre billede -->
+        <img class="col-span-12 md:col-span-6 w-full h-full object-cover" src="/hero_2.webp" alt="Teddy brown" />
+
+        <!-- Højre kolonne -->
+        <div class="col-span-12 md:col-span-6 grid md:grid-rows-2 h-full">
+            <img class="w-full h-full object-cover" src="/compact_and_stylish.webp" alt="Teddy sage" />
+            <img class="w-full h-full object-cover" src="/hero_3.webp" alt="Teddy mustard" />
+        </div>
+    </section>
+
+    <style></style>
+</MainLayout>
