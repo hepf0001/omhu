@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Lookbook 2025">
@@ -188,9 +189,52 @@ import Link from "../components/Link.astro";
                 <p class="mt-3 group-open:animate-fadeIn">You are always welcome to visit our showrooms. Find the one nearest you here.</p>
             </details>
         </div>
-
-        <!------------------- You might also like ------------------->
-
-        <style></style>
     </div>
+
+    <!------------------- You might also like ------------------->
+    <section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
+        <!-- Header med titel og knapper -->
+        <div class="flex justify-between items-center pb-5 md:pb-10 relative">
+            <!-- Overskrift -->
+            <h2 class="text-h4-mobile md:text-h3-desktop">You might also like</h2>
+
+            <!-- Pilene – vertikalt centreret med overskriften -->
+            <div class="flex items-center gap-5 h-full">
+                <button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
+                    <img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+                </button>
+                <button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
+                    <img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition>
+            <Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
+            <Card url="/teddy" cardimage="/teddy/teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
+
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="ottoman_yellow.webp" cardimagealt="Ottoman yellow" miljobillede="ottoman_collection.webp" miljobilledealt="Ottoman yellow miljøbillede" produktnavn="Ottoman" produktpris="3.400,00 DKK" />
+            </div>
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="corner_open_moss.webp" cardimagealt="Corner Open moss" miljobillede="shop_the_look_corner_open.webp" miljobilledealt="Corner Open moss miljøbillede" produktnavn="Corner Open" produktpris="19.950,00 DKK" />
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
+            <Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
+            <Card url="/teddy" cardimage="upgrade_teddy_plus.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+            </div>
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
+            </div>
+        </div>
+    </section>
+
+    <style></style>
 </MainLayout>

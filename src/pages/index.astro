@@ -2,6 +2,8 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <MainLayout title="Lookbook 2025">
@@ -144,10 +146,109 @@ import Link from "../components/Link.astro";
 	<!------------------- Timeline ------------------->
 
 	<!------------------- Explore the collection ------------------->
+	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
+		<!-- Header med titel og knapper -->
+		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
+			<!-- Overskrift -->
+			<h2 class="text-h4-mobile md:text-h3-desktop">Explore the collection</h2>
+
+			<!-- Pilene – vertikalt centreret med overskriften -->
+			<div class="flex items-center gap-5 h-full">
+				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+				</button>
+				<button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+				</button>
+			</div>
+		</div>
+
+		<!-- Slide 1 -->
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition>
+			<Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
+			<Card url="/teddy" cardimage="/teddy/teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
+
+			<div class="hidden md:block">
+				<Card url="/teddy" cardimage="ottoman_yellow.webp" cardimagealt="Ottoman yellow" miljobillede="ottoman_collection.webp" miljobilledealt="Ottoman yellow miljøbillede" produktnavn="Ottoman" produktpris="3.400,00 DKK" />
+			</div>
+			<div class="hidden md:block">
+				<Card url="/teddy" cardimage="corner_open_moss.webp" cardimagealt="Corner Open moss" miljobillede="shop_the_look_corner_open.webp" miljobilledealt="Corner Open moss miljøbillede" produktnavn="Corner Open" produktpris="19.950,00 DKK" />
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
+			<Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
+			<Card url="/teddy" cardimage="upgrade_teddy_plus.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+
+			<div class="hidden md:block">
+				<Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+			</div>
+			<div class="hidden md:block">
+				<Card url="/teddy" cardimage="teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
+			</div>
+		</div>
+	</section>
 
 	<!------------------- Timeline ------------------->
 
 	<!------------------- Testimonials ------------------->
+	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
+		<!-- Header med titel og knapper -->
+		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
+			<!-- Overskrift -->
+			<h2 class="text-h4-mobile md:text-h3-desktop">Customer feedback</h2>
+
+			<!-- Pilene – vertikalt centreret med overskriften -->
+			<div class="flex items-center gap-5 h-full">
+				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+				</button>
+				<button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+				</button>
+			</div>
+		</div>
+
+		<!-- Slide 1 -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-5" x-show="slidenr === 'one'" x-transition>
+			<Testimonials stjerner={4} navn="Andreas Juul" overskrift="We're thrilled with our new Teddy Corner Open" broedtekst="We're thrilled with our new Teddy Corner Open, which is perfect for the whole family. Easy to set up and easy to change. Big recommendation from here." />
+
+			<div class="hidden md:block">
+				<Testimonials
+					stjerner={5}
+					navn="Anna Kirstine"
+					overskrift="I have rarely been so happy with a purchase"
+					broedtekst="I have rarely been so happy with a purchase. The sofa is really cool, and at the same time very comfortable both to sit and lie in. The perfect addition to our living room! Also great praise to customer service, who were very helpful when we had some delivery problems. All in all, a really good experience shopping at omhucph <3"
+				/>
+			</div>
+			<div class="hidden md:block">
+				<Testimonials stjerner={5} navn="Ana A." overskrift="Absolute fan of my teddy sofa" broedtekst="Absolute fan of my teddy sofa. Design, comfy and crazy colours. Fast delivery (I received my order in one month). Amazing customer service, fast answer and really helpfull! OMHU i s a great choice!" />
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-5" x-show="slidenr === 'two'" x-transition>
+			<Testimonials
+				stjerner={5}
+				navn="Pippa"
+				overskrift="Teddy"
+				broedtekst="I absolutely love my teddy sofa! The design fits beautifully in my new apartment. I love the quality of the mattresses and how firm they are. I especially love how comfortable the back pillows are to sit in a seated position and at the same time you can slouch down and also be comfortable! Genius! The the delivery to Germany was much faster than the estimated time."
+			/>
+
+			<div class="hidden md:block">
+				<Testimonials stjerner={5} navn="Michaela" overskrift="Love my purchase" broedtekst="Love my purchase! The quality of the sofa is top and it’s extremely comfortable - for sitting and for sleeping." />
+			</div>
+			<div class="hidden md:block">
+				<Testimonials
+					stjerner={5}
+					navn="Mauro Naredo"
+					overskrift="Extremely satisfied with my order"
+					broedtekst="I am extremely satisfied with my order! The product arrived even better than I expected, and the customer service was outstanding—they were there to help me every step of the way. I’m truly happy with my purchase and highly recommend them to everyone."
+				/>
+			</div>
+		</div>
+	</section>
 
 	<!------------------- FAQ ------------------->
 	<div class="w-full max-w-3xl px-2 mx-auto py-12 dark:bg-transparent">
