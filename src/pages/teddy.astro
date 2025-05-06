@@ -43,6 +43,51 @@ import Card from "../components/Card.astro";
     </section>
 
     <!------------------- Color ------------------->
+    <section
+        class="max-w-7xl mx-auto p-5"
+        x-data="{
+        activeImage: '/teddy/teddy_mustard.webp',
+        activeColor: 'Color: Mustard - 5774',
+        colors: [
+            { hex: '#EFEDEB', label: 'Cream white - 5769', image: '/teddy/teddy_cream_white.webp' },
+            { hex: '#DED3CD', label: 'Sand - 5768', image: '/teddy/teddy_sand.webp' },
+            { hex: '#543E34', label: 'Brown - 5765', image: '/teddy/teddy_brown.webp' },
+            { hex: '#224366', label: 'Blue - 5772', image: '/teddy/teddy_blue.webp' },
+            { hex: '#5A98A2', label: 'Turquoise - 5771', image: '/teddy/teddy_turquoise.webp' },
+            { hex: '#405348', label: 'Emerald - 5773', image: '/teddy/teddy_emerald.webp' },
+            { hex: '#869680', label: 'Sage - 5776', image: '/teddy/teddy_sage.webp' },
+            { hex: '#65644F', label: 'Moss - 5777', image: '/teddy/teddy_moss.webp' },
+            { hex: '#A8A977', label: 'Olive - 5778', image: '/teddy/teddy_olive.webp' },
+            { hex: '#E5C15A', label: 'Yellow - 5779', image: '/teddy/teddy_yellow.webp' },
+            { hex: '#AF7F31', label: 'Mustard - 5774', image: '/teddy/teddy_mustard.webp' },
+            { hex: '#C88147', label: 'Tangerine - 5780', image: '/teddy/teddy_tangerine.webp' },
+            { hex: '#B06439', label: 'Orange - 5781', image: '/teddy/teddy_orange.webp' },
+            { hex: '#8D442F', label: 'Rust - 5782', image: '/teddy/teddy_rust.webp' },
+            { hex: '#AD6A67', label: 'Rose - 5764', image: '/teddy/teddy_rose.webp' },
+            { hex: '#BC9FB8', label: 'Purple - 5793', image: '/teddy/teddy_purple.webp' },
+            { hex: '#AC99A5', label: 'Lavender - 5763', image: '/teddy/teddy_lavender.webp' },
+            { hex: '#DABBB7', label: 'Blush - 5784', image: '/teddy/teddy_blush.webp' },
+            { hex: '#BABCC7', label: 'Slate - 5770', image: '/teddy/teddy_slate.webp' },
+            { hex: '#4A4D51', label: 'Charcoal - 5761', image: '/teddy/teddy_charcoal.webp' },
+            { hex: '#292929', label: 'Black - 5786', image: '/teddy/teddy_black.webp' }
+        ]
+    }"
+    >
+        <section class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 md:col-span-6 place-content-center">
+                <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Teddy in 21 colors</h3>
+                <h5 x-text="`Color: ${activeColor}`"></h5>
+                <section class="flex flex-wrap gap-2.5 mt-4">
+                    <template x-for="(color, index) in colors" :key="index">
+                        <div class="w-9 md:w-11.5 h-9 md:h-11.5 rounded-full cursor-pointer transition-transform transform hover:scale-110" :style="`background-color: ${color.hex}`" @click="activeImage = color.image; activeColor = color.label" @mouseenter="activeImage = color.image; activeColor = color.label"></div>
+                    </template>
+                </section>
+            </div>
+            <div class="col-span-12 md:col-span-6">
+                <img :src="activeImage" alt="Teddy color preview" class="w-full transition-opacity duration-300 ease-in-out" />
+            </div>
+        </section>
+    </section>
 
     <!------------------- Dimensions ------------------->
     <section class="p-5 max-w-7xl mx-auto">
