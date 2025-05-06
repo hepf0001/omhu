@@ -138,6 +138,32 @@ import Testimonials from "../components/Testimonials.astro";
 	<!------------------- Shop the look ------------------->
 
 	<!------------------- Upgrade ------------------->
+	<section class="max-w-7xl mx-auto p-5" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
+		<section class="grid grid-cols-12">
+			<div class="col-start-1 col-span-12 md:col-span-6 pb-5 md:pb-10">
+				<h3 class="text-h4-mobile md:text-h3-desktop">Upgrade Teddy – Designed to grow</h3>
+				<p>Life shifts, and so can your sofa. Upgrade your Teddy to fit your evolving space and lifestyle – Corner Closed, Corner Open, or Teddy Plus.</p>
+			</div>
+		</section>
+
+		<section class="grid grid-cols-12">
+			<div class="col-span-12 md:col-span-6 place-content-center space-y-5 md:space-y-10">
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_corner_closed.webp'" @click="activeImage = '/upgrade_corner_closed.webp'" :class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+					Corner closed
+				</h1>
+
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+					Corner open
+				</h1>
+
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_teddy_plus.webp'" @click="activeImage = '/upgrade_teddy_plus.webp'" :class="activeImage === '/upgrade_teddy_plus.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">Teddy Plus</h1>
+			</div>
+
+			<div class="col-span-12 md:col-span-6">
+				<img :src="activeImage" alt="Upgrade image" class="w-full transition-opacity duration-300 ease-in-out" />
+			</div>
+		</section>
+	</section>
 
 	<!------------------- Colors ------------------->
 
@@ -179,7 +205,7 @@ import Testimonials from "../components/Testimonials.astro";
 		<!-- Slide 2 -->
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
 			<Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
-			<Card url="/teddy" cardimage="upgrade_teddy_plus.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+			<Card url="/teddy" cardimage="upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
 
 			<div class="hidden md:block">
 				<Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
