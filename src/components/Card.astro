@@ -18,7 +18,7 @@ const {
 <article class="card overflow-hidden rounded-none">
     <a href={url} class="flex flex-col h-full">
         <header class="relative group">
-            <img src={cardimage} alt={cardimagealt} class="w-full h-64 object-cover group-hover:hidden rounded-none" />
+            <img src={cardimage} alt={cardimagealt} class="object-cover group-hover:hidden rounded-none" />
             <img src={miljobillede} alt="Miljøbillede" class="w-full h-64 object-cover hidden group-hover:block rounded-none" />
             <div class={`badge-container absolute top-2 left-2 flex ${badgenyt === "true" && badgerabat === "true" ? "flex-col gap-1" : ""}`}>
                 {badgenyt === "true" && <div class="badge bg-blue-700 md:text-p-desktop text-p-mobile text-neutral-50 px-2 py-1 border-none rounded-none">Best sellers</div>}
