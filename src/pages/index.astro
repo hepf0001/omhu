@@ -4,41 +4,6 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 import Testimonials from "../components/Testimonials.astro";
-import ColorCarousel from "../components/ColorCarousel.astro";
-
-const colors = [
-	{ name: "Cream white", hex: "#EFEDEB" },
-	{ name: "Sand", hex: "#DED3CD" },
-	{ name: "Brown", hex: "#543E34" },
-	{ name: "Blue", hex: "#224366" },
-	{ name: "Turquoise", hex: "#5A98A2" },
-	{ name: "Emerald", hex: "#405348" },
-	{ name: "Sage", hex: "#869680" },
-	{ name: "Moss", hex: "#65644F" },
-	{ name: "Olive", hex: "#A8A977" },
-	{ name: "Yellow", hex: "#E5C15A" },
-	{ name: "Mustard", hex: "#AF7F31" },
-	{ name: "Tangerine", hex: "#C88147" },
-	{ name: "Orange", hex: "#B06439" },
-	{ name: "Rust", hex: "#8D442F" },
-	{ name: "Rose", hex: "#AD6A67" },
-	{ name: "Purple", hex: "#BC9FB8" },
-	{ name: "Lavender", hex: "#AC99A5" },
-	{ name: "Blush", hex: "#DABBB7" },
-	{ name: "Slate", hex: "#BABCC7" },
-	{ name: "Charcoal", hex: "#4A4D51" },
-	{ name: "Black", hex: "#292929" },
-];
-
-function getTextColor(bgColor) {
-	// Simple luminance check
-	const hex = bgColor.replace("#", "");
-	const r = parseInt(hex.substr(0, 2), 16);
-	const g = parseInt(hex.substr(2, 2), 16);
-	const b = parseInt(hex.substr(4, 2), 16);
-	const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-	return luminance > 0.6 ? "black" : "white";
-}
 ---
 
 <MainLayout title="Lookbook 2025">
@@ -231,75 +196,120 @@ function getTextColor(bgColor) {
 	</div>
 
 	<!----- Color skift ----->
-	<section class="max-w-7xl mx-auto p-5 grid grid-cols-12 gap-5">
-		<div class="col-span-12 md:col-span-6 place-content-center">
-			<h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">A new mood, in a new cover</h3>
-			<p>21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</p>
-			<a href="/teddy"> <Button variant="primary" size="medium md:large">Explore extra covers</Button></a>
-		</div>
-		<div class="col-span-12 md:col-span-6">
-			<img src="/teddy/teddy_brown.webp" alt="Teddy" />
-		</div>
-	</section>
-
-	<!-- Ny sektion indsættes her -->
-	<section class="bg-neutral-50 py-10">
-		<div class="relative max-w-7xl mx-auto px-5">
-			<!-- Titel og knapper -->
-			<div class="flex justify-end pb-5">
-				<div class="flex items-center gap-5 h-full">
-					<button id="leftArrow" class="w-6 h-6 flex items-center justify-center">
-						<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
-					</button>
-					<button id="rightArrow" class="w-6 h-6 flex items-center justify-center">
-						<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
-					</button>
-				</div>
+	<section
+		class="max-w-7xl mx-auto p-5"
+		x-data="{
+		activeImage: '/teddy/teddy_cream_white.webp',
+		colors: [
+			{ hex: '#EFEDEB', name: 'Cream white', image: '/teddy/teddy_cream_white.webp' },
+			{ hex: '#DED3CD', name: 'Sand', image: '/teddy/teddy_sand.webp' },
+			{ hex: '#543E34', name: 'Brown', image: '/teddy/teddy_brown.webp' },
+			{ hex: '#224366', name: 'Blue', image: '/teddy/teddy_blue.webp' },
+			{ hex: '#5A98A2', name: 'Turquoise', image: '/teddy/teddy_turquoise.webp' },
+			{ hex: '#405348', name: 'Emerald', image: '/teddy/teddy_emerald.webp' },
+			{ hex: '#869680', name: 'Sage', image: '/teddy/teddy_sage.webp' },
+			{ hex: '#65644F', name: 'Moss', image: '/teddy/teddy_moss.webp' },
+			{ hex: '#A8A977', name: 'Olive', image: '/teddy/teddy_olive.webp' },
+			{ hex: '#E5C15A', name: 'Yellow', image: '/teddy/teddy_yellow.webp' },
+			{ hex: '#AF7F31', name: 'Mustard', image: '/teddy/teddy_mustard.webp' },
+			{ hex: '#C88147', name: 'Tangerine', image: '/teddy/teddy_tangerine.webp' },
+			{ hex: '#B06439', name: 'Orange', image: '/teddy/teddy_orange.webp' },
+			{ hex: '#8D442F', name: 'Rust', image: '/teddy/teddy_rust.webp' },
+			{ hex: '#AD6A67', name: 'Rose', image: '/teddy/teddy_rose.webp' },
+			{ hex: '#BC9FB8', name: 'Purple', image: '/teddy/teddy_purple.webp' },
+			{ hex: '#AC99A5', name: 'Lavender', image: '/teddy/teddy_lavender.webp' },
+			{ hex: '#DABBB7', name: 'Blush', image: '/teddy/teddy_blush.webp' },
+			{ hex: '#BABCC7', name: 'Slate', image: '/teddy/teddy_slate.webp' },
+			{ hex: '#4A4D51', name: 'Charcoal', image: '/teddy/teddy_charcoal.webp' },
+			{ hex: '#292929', name: 'Black', image: '/teddy/teddy_black.webp' }
+		]
+	}"
+	>
+		<section class="grid grid-cols-12 gap-5">
+			<div class="col-span-12 md:col-span-6 place-content-center">
+				<h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">A new mood, in a new cover</h3>
+				<p>21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</p>
+				<a href="/teddy">
+					<Button variant="primary" size="medium md:large">Explore extra covers</Button>
+				</a>
 			</div>
+			<div class="col-span-12 md:col-span-6">
+				<img :src="activeImage" alt="Teddy" />
+			</div>
+		</section>
 
-			<!-- Carousel -->
-			<div id="carousel" class="flex overflow-x-auto scroll-smooth py-6 pl-0 -space-x-5">
-				{
-					colors.map((color, index) => (
-						<div class={`relative w-[100px] h-[150px] rounded-lg flex-shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-6 shadow-md group`} style={`background-color: ${color.hex}; z-index: ${10 + index};`}>
-							<div class="absolute top-2 left-2 text-[10px] font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={`color: ${getTextColor(color.hex)}`}>
-								{color.name}
+		<!-- Color carousel -->
+		<section class="bg-neutral-50 py-10">
+			<div class="relative max-w-7xl mx-auto px-5">
+				<!-- Titel og knapper -->
+				<div class="flex justify-end pb-5">
+					<div class="flex items-center gap-5 h-full">
+						<button id="leftArrow" class="w-6 h-6 flex items-center justify-center">
+							<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+						</button>
+						<button id="rightArrow" class="w-6 h-6 flex items-center justify-center">
+							<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+						</button>
+					</div>
+				</div>
+
+				<!-- Carousel -->
+				<div id="carousel" class="flex overflow-x-auto scroll-smooth py-6 pl-0 -space-x-5">
+					<template x-for="(color, index) in colors" :key="index">
+						<div class="relative w-[100px] h-[150px] rounded-lg flex-shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-6 shadow-md group" :style="`background-color: ${color.hex}; z-index: ${10 + index};`" @click="activeImage = color.image; toggleActive(index)" @mouseenter="activeImage = color.image">
+							<div class="absolute top-2 left-2 text-[10px] font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" :style="`color: ${getTextColor(color.hex)}`">
+								<span x-text="color.name"></span>
 							</div>
 						</div>
-					))
-				}
+					</template>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<script>
-		document.getElementById("leftArrow").addEventListener("click", () => {
-			document.getElementById("carousel").scrollBy({ left: -100, behavior: "smooth" });
-		});
-		document.getElementById("rightArrow").addEventListener("click", () => {
-			document.getElementById("carousel").scrollBy({ left: 100, behavior: "smooth" });
-		});
+		<script>
+			function getTextColor(bgColor) {
+				// Simple luminance check
+				const hex = bgColor.replace("#", "");
+				const r = parseInt(hex.substr(0, 2), 16);
+				const g = parseInt(hex.substr(2, 2), 16);
+				const b = parseInt(hex.substr(4, 2), 16);
+				const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+				return luminance > 0.6 ? "black" : "white";
+			}
 
-		// Tilføj klikbegivenhedslytter til hvert kort
-		document.querySelectorAll("#carousel > div").forEach((card) => {
-			card.addEventListener("click", (event) => {
-				event.stopPropagation();
-				document.querySelectorAll("#carousel > div").forEach((c) => {
+			function toggleActive(index) {
+				const cards = document.querySelectorAll("#carousel > div");
+				cards.forEach((c) => {
 					c.classList.remove("active");
 				});
-				card.classList.add("active");
-			});
-		});
-	</script>
+				cards[index].classList.add("active");
+			}
 
-	<style>
-		#carousel > div.active {
-			transform: translateY(-24px);
-		}
-		#carousel > div.active div {
-			opacity: 1;
-		}
-	</style>
+			document.getElementById("leftArrow").addEventListener("click", () => {
+				document.getElementById("carousel").scrollBy({ left: -100, behavior: "smooth" });
+			});
+			document.getElementById("rightArrow").addEventListener("click", () => {
+				document.getElementById("carousel").scrollBy({ left: 100, behavior: "smooth" });
+			});
+
+			// Ensure click events are properly attached on mobile
+			document.querySelectorAll("#carousel > div").forEach((card, index) => {
+				card.addEventListener("click", (event) => {
+					event.stopPropagation();
+					toggleActive(index);
+				});
+			});
+		</script>
+
+		<style>
+			#carousel > div.active {
+				transform: translateY(-24px);
+			}
+			#carousel > div.active div {
+				opacity: 1;
+			}
+		</style>
+	</section>
 
 	<!------------------- Shop the look ------------------->
 
