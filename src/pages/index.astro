@@ -136,6 +136,126 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- Shop the look ------------------->
+	<section class="max-w-7xl mx-auto p-5">
+		<section class="grid grid-cols-12 gap-5">
+			<!-- Venstre billede -->
+			<div class="col-span-12 md:col-span-6 relative">
+				<!-- Billede -->
+				<img class="h-[350px] md:h-screen w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy og Ottoman Rust" />
+				<!-- Tekst og cirkel-overlay -->
+				<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
+					<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
+					<span class="w-6 h-6 rounded-full bg-[#8D442F]"></span>
+				</div>
+				<!-- Cirklerne ovenpå billedet -->
+				<div class="absolute top-[50%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+					<!-- Større cirkel -->
+					<span class="rounded-full bg-neutral-50/35 w-10 h-10 cursor-pointer circle" data-title="Teddy" data-price="12.850,00 DKK" data-image="/teddy/teddy_rust.webp" data-link="/teddy"></span>
+					<!-- Lille cirkel ovenpå den store -->
+					<span class="rounded-full bg-neutral-50 w-6 h-6 absolute cursor-pointer circle" data-title="Teddy" data-price="12.850,00 DKK" data-image="/teddy/teddy_rust.webp" data-link="/teddy"></span>
+				</div>
+				<div class="absolute top-[65%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+					<!-- Større cirkel -->
+					<span class="rounded-full bg-neutral-50/35 w-10 h-10 cursor-pointer circle" data-title="Ottoman" data-price="3.400,00 DKK" data-image="/ottoman_rust.webp" data-link="/teddy"></span>
+					<!-- Lille cirkel ovenpå den store -->
+					<span class="rounded-full bg-neutral-50 w-6 h-6 absolute cursor-pointer circle" data-title="Ottoman" data-price="3.400,00 DKK" data-image="/ottoman_rust.webp" data-link="/teddy"></span>
+				</div>
+			</div>
+
+			<!-- Popup -->
+			<div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 justify-center items-center z-50">
+				<div class="bg-white p-3 w-64 relative">
+					<button id="closePopup" class="absolute top-2 right-2 text-neutral-1000">
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+					<img id="popupImage" class="w-full h-32 object-cover" src="" alt="Product Image" />
+					<div class="flex justify-between items-center mt-2">
+						<div>
+							<h2 id="popupTitle" class="text-lg font-bold"></h2>
+							<p id="popupPrice" class="text-gray-700 text-sm"></p>
+						</div>
+						<a id="popupLink" href="">
+							<Button variant="quaternary" size="medium md:large">→</Button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+					const circles = document.querySelectorAll(".circle");
+					const popup = document.getElementById("popup");
+					const closePopup = document.getElementById("closePopup");
+					const popupImage = document.getElementById("popupImage");
+					const popupTitle = document.getElementById("popupTitle");
+					const popupPrice = document.getElementById("popupPrice");
+					const popupLink = document.getElementById("popupLink");
+
+					circles.forEach((circle) => {
+						circle.addEventListener("click", function (event) {
+							const rect = circle.getBoundingClientRect();
+							const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+							const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+							// Set popup position based on circle position
+							popup.style.position = "absolute";
+							popup.style.top = `${rect.top + scrollTop - popup.offsetHeight}px`;
+							popup.style.left = `${rect.left + scrollLeft}px`;
+
+							// Update popup content based on circle data attributes
+							popupImage.src = circle.getAttribute("data-image");
+							popupTitle.textContent = circle.getAttribute("data-title");
+							popupPrice.textContent = circle.getAttribute("data-price");
+							popupLink.href = circle.getAttribute("data-link");
+
+							popup.classList.remove("hidden");
+						});
+					});
+
+					closePopup.addEventListener("click", function () {
+						popup.classList.add("hidden");
+					});
+				});
+			</script>
+
+			<!-- Højre kolonne med grid -->
+			<div class="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 h-screen">
+				<!-- Billede 1 -->
+				<div class="relative">
+					<img class="w-full h-full object-cover" src="/shop_the_look_teddy_chair.webp" alt="Teddy Chair Sage" />
+					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
+						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Sage</span>
+						<span class="w-6 h-6 rounded-full bg-[#869680]"></span>
+					</div>
+					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
+						<img class="h-20 w-20" src="/teddy_chair_sage.webp" alt="Teddy Chair Sage" />
+						<div class="grid grid-rows-2 gap-2.5">
+							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
+							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
+						</div>
+					</a>
+				</div>
+
+				<!-- Billede 2 -->
+				<div class="relative">
+					<img class="w-full h-full object-cover" src="/shop_the_look_teddy.webp" alt="Teddy Moss" />
+					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
+						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Moss</span>
+						<span class="w-6 h-6 rounded-full bg-[#65644F]"></span>
+					</div>
+					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
+						<img class="h-20 w-20" src="/teddy_chair_sage.webp" alt="Teddy Chair Sage" />
+						<div class="grid grid-rows-2 gap-2.5">
+							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
+							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+	</section>
 
 	<!------------------- Upgrade ------------------->
 	<section class="max-w-7xl mx-auto p-5" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
@@ -359,8 +479,6 @@ import Testimonials from "../components/Testimonials.astro";
 			</div>
 		</div>
 	</section>
-
-	<!------------------- Timeline ------------------->
 
 	<!------------------- Testimonials ------------------->
 	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
