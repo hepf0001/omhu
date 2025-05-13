@@ -829,9 +829,6 @@ import Testimonials from "../components/Testimonials.astro";
 	</style>
 	<script src="/src/index.js" type="module"></script>
 	<script>
-		/* Import af Motion One biblioteket */
-		import { animate, stagger, inView, scroll, timeline } from "motion";
-
 		/**************** Shop the look ****************/
 		document.addEventListener("DOMContentLoaded", function () {
 			const circles = document.querySelectorAll(".circle");
@@ -848,12 +845,22 @@ import Testimonials from "../components/Testimonials.astro";
 					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 					const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-					// Set popup position based on circle position
+					// Sørg for, at popup har en defineret højde før positionering
+					popup.classList.remove("hidden");
+
+					// Midlertidigt vise popup for at få korrekt højde, hvis nødvendigt
+					popup.style.visibility = "hidden";
+					popup.style.display = "flex"; // Gør det synligt uden at vise det
+					const popupHeight = popup.offsetHeight;
+					popup.style.display = "";
+					popup.style.visibility = "";
+
+					// Sæt position baseret på klikposition
 					popup.style.position = "absolute";
-					popup.style.top = `${rect.top + scrollTop - popup.offsetHeight}px`;
+					popup.style.top = `${rect.top + scrollTop - popupHeight}px`;
 					popup.style.left = `${rect.left + scrollLeft}px`;
 
-					// Update popup content based on circle data attributes
+					// Opdater popup indhold
 					popupImage.src = circle.getAttribute("data-image");
 					popupTitle.textContent = circle.getAttribute("data-title");
 					popupPrice.textContent = circle.getAttribute("data-price");
