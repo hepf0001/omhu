@@ -19,9 +19,9 @@ import Card from "../components/Card.astro";
                     top-[75%] translate-y-[-100%] md:top-auto md:bottom-0 md:translate-y-0 flex md:items-end">
             <div class="grid grid-cols-12 py-0 md:py-10">
                 <div class="col-span-12 md:col-span-6 pr-0 md:pr-10">
-                    <h3 class="text-neutral-50 pb-2.5 md:pb-5">Teddy</h3>
-                    <h5 class="text-neutral-50 pb-2.5 md:pb-5">12.850,00 DKK</h5>
-                    <p class="text-neutral-50 pb-2.5 md:pb-5">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</p>
+                    <h3 class="text-neutral-50 pb-2 md:pb-5">Teddy</h3>
+                    <h5 class="text-neutral-50 pb-2 md:pb-5">12.850,00 DKK</h5>
+                    <p class="text-neutral-50 pb-2 md:pb-5">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</p>
                     <a href="https://omhucph.com/products/teddy">
                         <Button variant="primary" size="medium md:large">Buy now</Button>
                     </a>
@@ -44,7 +44,7 @@ import Card from "../components/Card.astro";
 
     <!------------------- Color ------------------->
     <section
-        class="max-w-7xl mx-auto p-5"
+        class="max-w-7xl mx-auto p-5 py-20 md:py-32"
         x-data="{
         activeImage: '/teddy/teddy_mustard.webp',
         activeColor: 'Color: Mustard - 5774',
@@ -116,7 +116,7 @@ import Card from "../components/Card.astro";
     </section>
 
     <!------------------- Function ------------------->
-    <section class="p-5 max-w-7xl mx-auto">
+    <section class="p-5 max-w-7xl mx-auto py-20 md:py-32">
         <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Function as</h3>
         <div class="grid md:grid-cols-12 gap-5">
             <div class="col-span-12 md:col-span-4">
@@ -148,8 +148,8 @@ import Card from "../components/Card.astro";
 
     <!------------------- FAQ ------------------->
     <div class="w-full max-w-3xl p-5 mx-auto">
-        <h3 class="text-h4-mobile md:text-h3-desktop">Got questions? We’ve got answers!</h3>
-        <div class="grid max-w-5xl mx-auto mt-6 divide-y divide-neutral-200">
+        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Got questions? We’ve got answers!</h3>
+        <div class="grid max-w-5xl mx-auto divide-y divide-neutral-200">
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
                     <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What materials is the TEDDY sofa made of?</span>
@@ -237,7 +237,7 @@ import Card from "../components/Card.astro";
     </div>
 
     <!------------------- You might also like ------------------->
-    <section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
+    <section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5 py-20 md:py-32">
         <!-- Header med titel og knapper -->
         <div class="flex justify-between items-center pb-5 md:pb-10 relative">
             <!-- Overskrift -->

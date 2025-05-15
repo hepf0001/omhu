@@ -41,20 +41,22 @@ import Testimonials from "../components/Testimonials.astro";
 		<article class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto p-5 z-20 content-center">
 			<div class="col-start-1 col-span-12 md:col-span-8">
 				<div class="pb-14">
-					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50 pb-5">Lookbook 2025</h5>
-					<h1 class="md:text-h1-desktop text-h3-mobile text-neutral-50 pb-5">One sofa. Always evolving.</h1>
+					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50 pb-2 md:pb-5">Lookbook 2025</h5>
+					<h1 class="md:text-h1-desktop text-h3-mobile text-neutral-50 pb-2 md:pb-5">One sofa. Always evolving.</h1>
 					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</h5>
 				</div>
-				<a href="/teddy"> <Button variant="primary" size="medium md:large">Meet the original Teddy</Button></a>
-				<a href="/card"><Button variant="tertiary" size="medium md:large">Explore colors</Button></a>
+				<div class="flex gap-2 md:gap-5">
+					<a href="/teddy"> <Button variant="primary" size="medium md:large">Meet the original Teddy</Button></a>
+					<a href="/card"><Button variant="tertiary" size="medium md:large">Explore colors</Button></a>
+				</div>
 			</div>
 		</article>
 	</div>
 
 	<!------------------- Teddy Plus ------------------->
-	<section class="max-w-7xl mx-auto p-5">
+	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<div class="md:pt-20 pt-10">
-			<div class="flex items-center h-96 sticky top-0">
+			<div class="flex items-center sticky top-0">
 				<div class="grid grid-cols-12">
 					<h1 class="md:text-h1-desktop text-h3-mobile text-center col-start-1 md:col-start-4 col-span-12 md:col-span-6">Introducing Teddy Plus – the three-seater designed for ultimate comfort and timeless style.</h1>
 				</div>
@@ -65,8 +67,8 @@ import Testimonials from "../components/Testimonials.astro";
 
 	<!------------------- Before/After slider ------------------->
 	<section class="grid grid-cols-12 max-w-7xl mx-auto p-5">
-		<div class="col-start-1 col-span-12 md:col-span-6">
-			<h3 class="text-h4-mobile md:text-h3-desktop">Sofa, bed, or conversation pit</h3>
+		<div class="col-start-1 col-span-12 md:col-span-6 pb-5 md:pb-10">
+			<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Sofa, bed, or conversation pit</h3>
 			<p>Whether it’s lounging on the sofa, sharing stories with friends, or unwinding in a cozy bed at the end of the day, Teddy flexes to suit your needs. Seamlessly shifting from one function to the next.</p>
 		</div>
 	</section>
@@ -86,7 +88,7 @@ import Testimonials from "../components/Testimonials.astro";
 	</figure>
 
 	<!------------------- Accordion ------------------->
-	<section class="max-w-7xl mx-auto p-5">
+	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<div
 			x-data="{
 				active: 0,
@@ -113,10 +115,10 @@ import Testimonials from "../components/Testimonials.astro";
 					},
 				]
 			}"
-			class="flex flex-col md:flex-row gap-2 overflow-visible md:overflow-x-auto h-[500px]"
+			class="flex flex-col md:flex-row gap-2 overflow-visible md:overflow-x-auto h-[80vh]"
 		>
 			<template x-for="(item, index) in items" :key="index">
-				<div @click="active = index" class="relative transition-all duration-500 ease-in-out cursor-pointer bg-cover bg-center text-neutral-50 flex-shrink-0" :class="active === index ? 'md:flex-grow w-full md:h-[500px] h-[70vh]' : 'md:w-[100px] w-full md:h-[500px] h-16'" :style="`background-image: url(${item.image})`">
+				<div @click="active = index" class="relative transition-all duration-500 ease-in-out cursor-pointer bg-cover bg-center text-neutral-50 flex-shrink-0" :class="active === index ? 'md:flex-grow w-full h-[80vh]' : 'md:w-[100px] w-full md:h-[80vh] h-16'" :style="`background-image: url(${item.image})`">
 					<!-- Mørkt overlay -->
 					<div class="absolute inset-0 bg-neutral-1000/20 z-0"></div>
 
@@ -127,7 +129,7 @@ import Testimonials from "../components/Testimonials.astro";
 
 					<!-- Content -->
 					<div class="absolute bottom-0 p-5 w-full flex flex-col justify-end space-y-3 z-10" x-show="active === index" x-transition>
-						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50" x-text="item.title"></h3>
+						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50 pb-2" x-text="item.title"></h3>
 						<p class="text-neutral-50" x-text="item.description"></p>
 					</div>
 				</div>
@@ -141,7 +143,7 @@ import Testimonials from "../components/Testimonials.astro";
 			<!-- Venstre billede -->
 			<div class="col-span-12 md:col-span-6 relative">
 				<!-- Billede -->
-				<img class="h-[350px] md:h-screen w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy og Ottoman Rust" />
+				<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy og Ottoman Rust" />
 				<!-- Tekst og cirkel-overlay -->
 				<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
 					<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
@@ -184,7 +186,7 @@ import Testimonials from "../components/Testimonials.astro";
 			</div>
 
 			<!-- Højre kolonne med grid -->
-			<div class="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 h-screen">
+			<div class="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 h-[80vh]">
 				<!-- Billede 1 -->
 				<div class="relative">
 					<img class="w-full h-full object-cover" src="/shop_the_look_teddy_chair.webp" alt="Teddy Chair Sage" />
@@ -194,7 +196,7 @@ import Testimonials from "../components/Testimonials.astro";
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
 						<img class="h-20 w-20" src="/teddy_chair_sage.webp" alt="Teddy Chair Sage" />
-						<div class="grid grid-rows-2 gap-2.5">
+						<div class="grid grid-rows-2 gap-2 md:gap-4">
 							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
 							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
 						</div>
@@ -209,10 +211,10 @@ import Testimonials from "../components/Testimonials.astro";
 						<span class="w-6 h-6 rounded-full bg-[#65644F]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
-						<img class="h-20 w-20" src="/teddy_chair_sage.webp" alt="Teddy Chair Sage" />
-						<div class="grid grid-rows-2 gap-2.5">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
+						<img class="h-20 w-20" src="/teddy_moss.webp" alt="Teddy Moss" />
+						<div class="grid grid-rows-2 gap-2 md:gap-4">
+							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy</span>
+							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">12.850,00 DKK</span>
 						</div>
 					</a>
 				</div>
@@ -221,21 +223,26 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- Upgrade ------------------->
-	<section class="max-w-7xl mx-auto p-5" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
+	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
 		<section class="grid grid-cols-12">
-			<div class="col-start-1 col-span-12 md:col-span-6 pb-5 md:pb-10">
-				<h3 class="text-h4-mobile md:text-h3-desktop">Upgrade Teddy – Designed to grow</h3>
+			<div class="col-start-1 col-span-12 md:col-span-6 pb-5">
+				<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Upgrade Teddy – Designed to grow</h3>
 				<p>Life shifts, and so can your sofa. Upgrade your Teddy to fit your evolving space and lifestyle – Corner Closed, Corner Open, or Teddy Plus.</p>
 			</div>
 		</section>
 
 		<section class="grid grid-cols-12">
-			<div class="col-span-12 md:col-span-6 place-content-center space-y-5 md:space-y-10">
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_corner_closed.webp'" @click="activeImage = '/upgrade_corner_closed.webp'" :class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+			<div class="col-span-12 md:col-span-6 place-content-center">
+				<h1
+					class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5 md:pb-10"
+					@mouseenter="activeImage = '/upgrade_corner_closed.webp'"
+					@click="activeImage = '/upgrade_corner_closed.webp'"
+					:class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'"
+				>
 					Corner closed
 				</h1>
 
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5 md:pb-10" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
 					Corner open
 				</h1>
 
@@ -283,6 +290,7 @@ import Testimonials from "../components/Testimonials.astro";
 		class="max-w-7xl mx-auto p-5"
 		x-data="{
 		activeImage: '/teddy/teddy_cream_white.webp',
+		activeIndex: 0,
 		colors: [
 			{ hex: '#EFEDEB', name: 'Cream white', image: '/teddy/teddy_cream_white.webp' },
 			{ hex: '#DED3CD', name: 'Sand', image: '/teddy/teddy_sand.webp' },
@@ -305,13 +313,23 @@ import Testimonials from "../components/Testimonials.astro";
 			{ hex: '#BABCC7', name: 'Slate', image: '/teddy/teddy_slate.webp' },
 			{ hex: '#4A4D51', name: 'Charcoal', image: '/teddy/teddy_charcoal.webp' },
 			{ hex: '#292929', name: 'Black', image: '/teddy/teddy_black.webp' }
-		]
+		],
+		getTextClass(hex) {
+			const r = parseInt(hex.substr(1, 2), 16);
+			const g = parseInt(hex.substr(3, 2), 16);
+			const b = parseInt(hex.substr(5, 2), 16);
+			const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+			return luminance > 0.6 ? 'text-neutral-1000' : 'text-neutral-50';
+		},
+		toggleActive(index) {
+			this.activeIndex = index;
+		}
 	}"
 	>
-		<section class="grid grid-cols-12 gap-5">
+		<section class="grid grid-cols-12 gap-5 pb-5">
 			<div class="col-span-12 md:col-span-6 place-content-center">
-				<h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">A new mood, in a new cover</h3>
-				<p>21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</p>
+				<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">A new mood, in a new cover</h3>
+				<p class="pb-2 md:pb-5">21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</p>
 				<a href="/teddy">
 					<Button variant="primary" size="medium md:large">Explore extra covers</Button>
 				</a>
@@ -322,48 +340,44 @@ import Testimonials from "../components/Testimonials.astro";
 		</section>
 
 		<!-- Color carousel -->
-		<section class="bg-neutral-50 py-10">
-			<div class="relative max-w-7xl mx-auto px-5">
-				<!-- Titel og knapper -->
-				<div class="flex justify-end pb-5">
-					<div class="flex items-center gap-5 h-full">
-						<button id="leftArrow" class="w-6 h-6 flex items-center justify-center">
-							<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
-						</button>
-						<button id="rightArrow" class="w-6 h-6 flex items-center justify-center">
-							<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
-						</button>
+		<!-- Knapper -->
+		<div class="flex justify-end">
+			<div class="flex items-center gap-5 h-full">
+				<button id="leftArrow" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+				</button>
+				<button id="rightArrow" class="w-6 h-6 flex items-center justify-center">
+					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+				</button>
+			</div>
+		</div>
+
+		<!-- Carousel -->
+		<div id="carousel" class="flex overflow-x-auto scroll-smooth pt-10 pb-2 pl-0 -space-x-5">
+			<template x-for="(color, index) in colors" :key="index">
+				<div class="relative w-[100px] h-[150px] rounded-lg flex-shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-6 shadow-md group" :style="`background-color: ${color.hex}; z-index: ${10 + index};`" @click="activeImage = color.image; toggleActive(index)" @mouseenter="activeImage = color.image">
+					<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-p-mobile md:text-p-desktop" :class="getTextClass(color.hex)">
+						<span x-text="color.name"></span>
 					</div>
 				</div>
-
-				<!-- Carousel -->
-				<div id="carousel" class="flex overflow-x-auto scroll-smooth py-6 pl-0 -space-x-5">
-					<template x-for="(color, index) in colors" :key="index">
-						<div class="relative w-[100px] h-[150px] rounded-lg flex-shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-6 shadow-md group" :style="`background-color: ${color.hex}; z-index: ${10 + index};`" @click="activeImage = color.image; toggleActive(index)" @mouseenter="activeImage = color.image">
-							<div class="absolute top-2 left-2 text-[10px] font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" :style="`color: ${getTextColor(color.hex)}`">
-								<span x-text="color.name"></span>
-							</div>
-						</div>
-					</template>
-				</div>
-			</div>
-		</section>
+			</template>
+		</div>
 	</section>
 
 	<!------------------- Shop the look ------------------->
-	<section class="max-w-7xl mx-auto p-5">
+	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<section class="grid grid-cols-12 gap-5">
 			<!-- Venstre billede -->
 			<div class="col-span-12 md:col-span-6 relative">
 				<div class="relative">
-					<img class="h-[350px] md:h-screen w-full object-cover" src="/shop_the_look_corner_open.webp" alt="Corner Open Moss" />
+					<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_corner_open.webp" alt="Corner Open Moss" />
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
 						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Moss</span>
 						<span class="w-6 h-6 rounded-full bg-[#65644F]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
 						<img class="h-20 w-20" src="/corner_open_moss.webp" alt="Corner Open Moss" />
-						<div class="grid grid-rows-2 gap-2.5">
+						<div class="grid grid-rows-2 gap-2 md:gap-4">
 							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Corner Open</span>
 							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">19.950,00 DKK</span>
 						</div>
@@ -393,7 +407,7 @@ import Testimonials from "../components/Testimonials.astro";
 			</div>
 
 			<!-- Højre kolonne med grid -->
-			<div class="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 h-screen">
+			<div class="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 h-[80vh]">
 				<!-- Billede 1 -->
 				<div class="relative">
 					<!-- Billede -->
@@ -427,9 +441,9 @@ import Testimonials from "../components/Testimonials.astro";
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5" href="/teddy">
 						<img class="h-20 w-20" src="/teddy_plus_turquoise.webp" alt="Teddy Plus Turquoise" />
-						<div class="grid grid-rows-2 gap-2.5">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
+						<div class="grid grid-rows-2 gap-2 md:gap-4">
+							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Plus</span>
+							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">18.200,00 DKK</span>
 						</div>
 					</a>
 				</div>
@@ -438,15 +452,14 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- Timeline ------------------->
-
 	<section>
 		<!---------------- Friends first ---------------->
 		<div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/friends_first.webp')">
 			<div class="absolute inset-0 bg-neutral-1000/30"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax1 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-5">1992 - 2018</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-5">Friends first</h1>
+					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-2 md:pb-5">1992 - 2018</h5>
+					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">Friends first</h1>
 					<p class="text-neutral-50">
 						Born in Denmark, OMHU is the culmination of a friendship spanning over 30 years. Jonas and Frederik share a deep passion for furniture and interior design, which ignited their dream of trading curated vintage pieces. <br /><br />A few years ago, they decided to take a leap of faith, leaving their 9 to 5 jobs behind to pursue
 						this shared passion. What began with an old van and countless flea market adventures soon blossomed into ‘Kram & Klenodier’, their Instagram-based vintage shop founded in 2018.
@@ -459,8 +472,8 @@ import Testimonials from "../components/Testimonials.astro";
 			<div class="absolute inset-0 bg-neutral-1000/30"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax2 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-5">2022</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-5">Enter Teddy</h1>
+					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-2 md:pb-5">2022</h5>
+					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">Enter Teddy</h1>
 					<p class="text-neutral-50">
 						In the spring of 2022, the concept for the Teddy sofa was conceived, drawing inspiration from their diverse experiences with vintage furniture traded through ‘Kram & Klenodier’. A symbol of the unique vision and dedication that OMHU represents, Teddy became a central piece in their journey. <br /><br />It was during this
 						creative process that the brand OMHU was born, not just to encompass Teddy but to pave the way for future designs. Today, OMHU proudly stands as a testament to our vision and dedication to creating unique, high-quality furniture pieces.
@@ -473,8 +486,8 @@ import Testimonials from "../components/Testimonials.astro";
 			<div class="absolute inset-0 bg-neutral-1000/30"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax3 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-5">2024</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-5">A Holistic Approach</h1>
+					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-2 md:pb-5">2024</h5>
+					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">A Holistic Approach</h1>
 					<p class="text-neutral-50">
 						The vision of OMHU extends beyond design; Creating products that adapt to all stages of life is at the heart of what we do. We believe in longevity—a critical focus in a world struggling with overconsumption. <br /><br />Instead of replacing furniture, our designs evolve with you, adapting seamlessly to your changing needs.
 						At OMHU, we’re committed to creating designs that grow with you, proving that thoughtful design can last a lifetime.
@@ -485,7 +498,7 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- Explore the collection ------------------->
-	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
+	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<!-- Header med titel og knapper -->
 		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
 			<!-- Overskrift -->
@@ -588,9 +601,9 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- FAQ ------------------->
-	<div class="w-full max-w-3xl p-5 mx-auto">
-		<h3 class="text-h4-mobile md:text-h3-desktop">Got questions? We’ve got answers!</h3>
-		<div class="grid max-w-5xl mx-auto mt-6 divide-y divide-neutral-200">
+	<div class="w-full max-w-3xl p-5 mx-auto py-20 md:py-32">
+		<h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Got questions? We’ve got answers!</h3>
+		<div class="grid max-w-5xl mx-auto divide-y divide-neutral-200">
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
 					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What do I do if my sofa or other products arrives damaged?</span>
