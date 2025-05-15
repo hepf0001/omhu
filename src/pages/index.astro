@@ -47,7 +47,7 @@ import Testimonials from "../components/Testimonials.astro";
 				</div>
 				<div class="flex gap-2 md:gap-5">
 					<a href="/teddy"> <Button variant="primary" size="medium md:large">Meet the original Teddy</Button></a>
-					<a href="/card"><Button variant="tertiary" size="medium md:large">Explore colors</Button></a>
+					<a href="#color"><Button variant="tertiary" size="medium md:large">Explore colors</Button></a>
 				</div>
 			</div>
 		</article>
@@ -113,12 +113,21 @@ import Testimonials from "../components/Testimonials.astro";
 						description: 'A sleek, modern design that complements any room while saving space.',
 						image: '/compact_and_stylish.webp',
 					},
-				]
+				],
+				isDesktop() {
+					return window.innerWidth >= 768;
+				}
 			}"
 			class="flex flex-col md:flex-row gap-2 overflow-visible md:overflow-x-auto h-[80vh]"
 		>
 			<template x-for="(item, index) in items" :key="index">
-				<div @click="active = index" class="relative transition-all duration-500 ease-in-out cursor-pointer bg-cover bg-center text-neutral-50 flex-shrink-0" :class="active === index ? 'md:flex-grow w-full h-[80vh]' : 'md:w-[100px] w-full md:h-[80vh] h-16'" :style="`background-image: url(${item.image})`">
+				<div
+					@click="active = index"
+					@mouseover="if (isDesktop()) active = index"
+					class="relative transition-all duration-500 ease-in-out cursor-pointer bg-cover bg-center text-neutral-50 flex-shrink-0"
+					:class="active === index ? 'md:flex-grow w-full h-[80vh]' : 'md:w-[100px] w-full md:h-[80vh] h-16'"
+					:style="`background-image: url(${item.image})`"
+				>
 					<!-- Mørkt overlay -->
 					<div class="absolute inset-0 bg-neutral-1000/20 z-0"></div>
 
@@ -223,7 +232,7 @@ import Testimonials from "../components/Testimonials.astro";
 	</section>
 
 	<!------------------- Upgrade ------------------->
-	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
+	<section class="max-w-7xl mx-auto p-5 pt-20 md:pt-32" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
 		<section class="grid grid-cols-12">
 			<div class="col-start-1 col-span-12 md:col-span-6 pb-5">
 				<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Upgrade Teddy – Designed to grow</h3>
@@ -259,7 +268,7 @@ import Testimonials from "../components/Testimonials.astro";
 
 	<!----- Video ----->
 
-	<div class="w-full overflow-hidden">
+	<div class="w-full overflow-hidden pt-20 md:pt-32" id="color">
 		<div class="relative">
 			<!-- Mobil video -->
 			<video class="block md:hidden w-full object-cover" autoplay muted loop playsinline>
