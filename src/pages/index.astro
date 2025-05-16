@@ -159,13 +159,13 @@ import Testimonials from "../components/Testimonials.astro";
 					<span class="w-6 h-6 rounded-full bg-[#8D442F]"></span>
 				</div>
 				<!-- Cirklerne ovenpå billedet -->
-				<div class="absolute top-[50%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle" data-title="Teddy" data-price="12.850,00 DKK" data-image="/teddy/teddy_rust.webp" data-link="/teddy">
+				<div class="absolute top-[50%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Teddy" data-price="12.850,00 DKK" data-image="/teddy/teddy_rust.webp" data-link="/teddy">
 					<!-- Større cirkel -->
 					<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 					<!-- Lille cirkel ovenpå den store -->
 					<span class="rounded-full bg-neutral-50 w-6 h-6 absolute"></span>
 				</div>
-				<div class="absolute top-[65%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle" data-title="Ottoman" data-price="3.400,00 DKK" data-image="/ottoman_rust.webp" data-link="/teddy">
+				<div class="absolute top-[65%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Ottoman" data-price="3.400,00 DKK" data-image="/ottoman_rust.webp" data-link="/teddy">
 					<!-- Større cirkel -->
 					<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 					<!-- Lille cirkel ovenpå den store -->
@@ -242,16 +242,11 @@ import Testimonials from "../components/Testimonials.astro";
 
 		<section class="grid grid-cols-12">
 			<div class="col-span-12 md:col-span-6 place-content-center">
-				<h1
-					class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5 md:pb-10"
-					@mouseenter="activeImage = '/upgrade_corner_closed.webp'"
-					@click="activeImage = '/upgrade_corner_closed.webp'"
-					:class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'"
-				>
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_closed.webp'" @click="activeImage = '/upgrade_corner_closed.webp'" :class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
 					Corner closed
 				</h1>
 
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5 md:pb-10" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
 					Corner open
 				</h1>
 
@@ -427,13 +422,13 @@ import Testimonials from "../components/Testimonials.astro";
 						<span class="w-6 h-6 rounded-full bg-[#8D442F]"></span>
 					</div>
 					<!-- Cirklerne ovenpå billedet -->
-					<div class="absolute top-[50%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle" data-title="Corner Closed" data-price="21.600,00 DKK" data-image="/corner_closed_rust.webp" data-link="/teddy">
+					<div class="absolute top-[50%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Corner Closed" data-price="21.600,00 DKK" data-image="/corner_closed_rust.webp" data-link="/teddy">
 						<!-- Større cirkel -->
 						<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 						<!-- Lille cirkel ovenpå den store -->
 						<span class="rounded-full bg-neutral-50 w-6 h-6 absolute"></span>
 					</div>
-					<div class="absolute top-[40%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle" data-title="Pillows" data-price="850,00 DKK" data-image="/pillows_rose.webp" data-link="/teddy">
+					<div class="absolute top-[40%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Pillows" data-price="850,00 DKK" data-image="/pillows_rose.webp" data-link="/teddy">
 						<!-- Større cirkel -->
 						<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 						<!-- Lille cirkel ovenpå den store -->
@@ -508,12 +503,8 @@ import Testimonials from "../components/Testimonials.astro";
 
 	<!------------------- Explore the collection ------------------->
 	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5 py-20 md:py-32">
-		<!-- Header med titel og knapper -->
 		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
-			<!-- Overskrift -->
 			<h2 class="text-h4-mobile md:text-h3-desktop">Explore the collection</h2>
-
-			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
 				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
 					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
@@ -524,41 +515,37 @@ import Testimonials from "../components/Testimonials.astro";
 			</div>
 		</div>
 
-		<!-- Slide 1 -->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition>
-			<Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
-			<Card url="/teddy" cardimage="teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
-
-			<div class="hidden md:block">
-				<Card url="/teddy" cardimage="ottoman_yellow.webp" cardimagealt="Ottoman yellow" miljobillede="ottoman_collection.webp" miljobilledealt="Ottoman yellow miljøbillede" produktnavn="Ottoman" produktpris="3.400,00 DKK" />
+		<div class="relative h-full min-h-[200px]">
+			<!-- Slide 1 -->
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-5 inset-0" x-show="slidenr === 'one'" x-transition.opacity.duration-300 x-cloak>
+				<Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
+				<Card url="/teddy" cardimage="teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
+				<div class="hidden md:block">
+					<Card url="/teddy" cardimage="ottoman_yellow.webp" cardimagealt="Ottoman yellow" miljobillede="ottoman_collection.webp" miljobilledealt="Ottoman yellow miljøbillede" produktnavn="Ottoman" produktpris="3.400,00 DKK" />
+				</div>
+				<div class="hidden md:block">
+					<Card url="/teddy" cardimage="corner_open_moss.webp" cardimagealt="Corner Open moss" miljobillede="shop_the_look_corner_open.webp" miljobilledealt="Corner Open moss miljøbillede" produktnavn="Corner Open" produktpris="19.950,00 DKK" />
+				</div>
 			</div>
-			<div class="hidden md:block">
-				<Card url="/teddy" cardimage="corner_open_moss.webp" cardimagealt="Corner Open moss" miljobillede="shop_the_look_corner_open.webp" miljobilledealt="Corner Open moss miljøbillede" produktnavn="Corner Open" produktpris="19.950,00 DKK" />
-			</div>
-		</div>
 
-		<!-- Slide 2 -->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
-			<Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
-			<Card url="/teddy" cardimage="upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
-
-			<div class="hidden md:block">
-				<Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
-			</div>
-			<div class="hidden md:block">
-				<Card url="/teddy" cardimage="teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
+			<!-- Slide 2 -->
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-5 absolute inset-0" x-show="slidenr === 'two'" x-transition.opacity.duration-300 x-cloak>
+				<Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
+				<Card url="/teddy" cardimage="upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+				<div class="hidden md:block">
+					<Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+				</div>
+				<div class="hidden md:block">
+					<Card url="/teddy" cardimage="teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<!------------------- Testimonials ------------------->
 	<section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5">
-		<!-- Header med titel og knapper -->
 		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
-			<!-- Overskrift -->
 			<h2 class="text-h4-mobile md:text-h3-desktop">Customer feedback</h2>
-
-			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
 				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
 					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
@@ -569,42 +556,42 @@ import Testimonials from "../components/Testimonials.astro";
 			</div>
 		</div>
 
-		<!-- Slide 1 -->
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-5" x-show="slidenr === 'one'" x-transition>
-			<Testimonials stjerner={4} navn="Andreas Juul" overskrift="We're thrilled with our new Teddy Corner Open" broedtekst="We're thrilled with our new Teddy Corner Open, which is perfect for the whole family. Easy to set up and easy to change. Big recommendation from here." />
+		<div class="relative h-full min-h-[200px]">
+			<!-- Slide 1 -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-5 inset-0" x-show="slidenr === 'one'" x-transition.opacity.duration-300 x-cloak>
+				<Testimonials stjerner={4} navn="Andreas Juul" overskrift="We're thrilled with our new Teddy Corner Open" broedtekst="We're thrilled with our new Teddy Corner Open, which is perfect for the whole family. Easy to set up and easy to change. Big recommendation from here." />
+				<div class="hidden md:block">
+					<Testimonials
+						stjerner={5}
+						navn="Anna Kirstine"
+						overskrift="I have rarely been so happy with a purchase"
+						broedtekst="I have rarely been so happy with a purchase. The sofa is really cool, and at the same time very comfortable both to sit and lie in. The perfect addition to our living room!Also great praise to customer service, who were very helpful when we had some delivery problems. All in all, a really good experience shopping at omhucph <3"
+					/>
+				</div>
+				<div class="hidden md:block">
+					<Testimonials stjerner={5} navn="Ana A." overskrift="Absolute fan of my teddy sofa" broedtekst="Absolute fan of my teddy sofa. Design, comfy and crazy colours. Fast delivery (I received my order in one month). Amazing customer service, fast answer and really helpfull! OMHU i s a great choice!" />
+				</div>
+			</div>
 
-			<div class="hidden md:block">
+			<!-- Slide 2 -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-5 absolute inset-0" x-show="slidenr === 'two'" x-transition.opacity.duration-300 x-cloak>
 				<Testimonials
 					stjerner={5}
-					navn="Anna Kirstine"
-					overskrift="I have rarely been so happy with a purchase"
-					broedtekst="I have rarely been so happy with a purchase. The sofa is really cool, and at the same time very comfortable both to sit and lie in. The perfect addition to our living room! Also great praise to customer service, who were very helpful when we had some delivery problems. All in all, a really good experience shopping at omhucph <3"
+					navn="Pippa"
+					overskrift="Teddy"
+					broedtekst="I absolutely love my teddy sofa! The design fits beautifully in my new apartment. I love the quality of the mattresses and how firm they are. I especially love how comfortable the back pillows are to sit in a seated position and at the same time you can slouch down and also be comfortable! Genius! The the delivery to Germany was much faster than the estimated time."
 				/>
-			</div>
-			<div class="hidden md:block">
-				<Testimonials stjerner={5} navn="Ana A." overskrift="Absolute fan of my teddy sofa" broedtekst="Absolute fan of my teddy sofa. Design, comfy and crazy colours. Fast delivery (I received my order in one month). Amazing customer service, fast answer and really helpfull! OMHU i s a great choice!" />
-			</div>
-		</div>
-
-		<!-- Slide 2 -->
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-5" x-show="slidenr === 'two'" x-transition>
-			<Testimonials
-				stjerner={5}
-				navn="Pippa"
-				overskrift="Teddy"
-				broedtekst="I absolutely love my teddy sofa! The design fits beautifully in my new apartment. I love the quality of the mattresses and how firm they are. I especially love how comfortable the back pillows are to sit in a seated position and at the same time you can slouch down and also be comfortable! Genius! The the delivery to Germany was much faster than the estimated time."
-			/>
-
-			<div class="hidden md:block">
-				<Testimonials stjerner={5} navn="Michaela" overskrift="Love my purchase" broedtekst="Love my purchase! The quality of the sofa is top and it’s extremely comfortable - for sitting and for sleeping." />
-			</div>
-			<div class="hidden md:block">
-				<Testimonials
-					stjerner={5}
-					navn="Mauro Naredo"
-					overskrift="Extremely satisfied with my order"
-					broedtekst="I am extremely satisfied with my order! The product arrived even better than I expected, and the customer service was outstanding—they were there to help me every step of the way. I’m truly happy with my purchase and highly recommend them to everyone."
-				/>
+				<div class="hidden md:block">
+					<Testimonials stjerner={5} navn="Michaela" overskrift="Love my purchase" broedtekst="Love my purchase! The quality of the sofa is top and it’s extremely comfortable - for sitting and for sleeping." />
+				</div>
+				<div class="hidden md:block">
+					<Testimonials
+						stjerner={5}
+						navn="Mauro Naredo"
+						overskrift="Extremely satisfied with my order"
+						broedtekst="I am extremely satisfied with my order! The product arrived even better than I expected, and the customer service was outstanding—they were there to help me every step of the way. I’m truly happy with my purchase and highly recommend them to everyone."
+					/>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -625,9 +612,9 @@ import Testimonials from "../components/Testimonials.astro";
 					</span>
 				</summary>
 				<p class="mt-3 group-open:animate-fadeIn">
-					If your sofa or any other product arrives damaged, please follow these steps: <br /><br />Document the Damage: Take clear photos of the damage as soon as possible. This will help us understand the issue and expedite the process. <br /><br />Contact Our Support Team: Reach out to us at hello@omhucph.com, if possible, within 48
-					hours of receiving the item. Please provide your order number, a brief description of the damage, and the photos you took. <br /><br />We’ll Take Care of the Rest: Our team will review your case and work with you to find the best solution, whether it’s a replacement, repair, or other suitable option. Your satisfaction is our
-					priority, and we’ll make sure to resolve the issue quickly and effectively.
+					If your sofa or any other product arrives damaged, please follow these steps:<br /><br /><span class="font-bold">Document the Damage:</span> Take clear photos of the damage as soon as possible. This will help us understand the issue and expedite the process. <br /><br /><span class="font-bold">Contact Our Support Team:</span> Reach
+					out to us at <span class="underline text-blue-700">hello@omhucph.com</span>, if possible, within 48 hours of receiving the item. Please provide your order number, a brief description of the damage, and the photos you took. <br /><br /><span class="font-bold">We’ll Take Care of the Rest:</span> Our team will review your case and work
+					with you to find the best solution, whether it’s a replacement, repair, or other suitable option. Your satisfaction is our priority, and we’ll make sure to resolve the issue quickly and effectively.
 				</p>
 			</details>
 			<details class="group py-4">
@@ -679,7 +666,7 @@ import Testimonials from "../components/Testimonials.astro";
 				<p class="mt-3 group-open:animate-fadeIn">
 					Love our original TEDDY sofa but can’t order it in your country yet? We hear you! OMHU is on a journey to bring our designs to new markets around the world, and your interest helps shape where we ship next.
 
-					<br /><br />Sign up and help us prioritize your country through this link: https://omhucph.com/pages/waitlist
+					<br /><br />Sign up and help us prioritize your country through this link: <a href="https://omhucph.com/pages/waitlist" target="_blank" class="underline text-blue-700">https://omhucph.com/pages/waitlist</a>
 
 					<br /><br />We’re expanding quickly and adding new countries every month! Sign up below to let us know where you are, and we’ll keep you updated on future launches in your region.
 
@@ -700,7 +687,7 @@ import Testimonials from "../components/Testimonials.astro";
 				<p class="mt-3 group-open:animate-fadeIn">
 					Yes we do! At the moment we also ship to the US and Canada.
 
-					<br /><br />For US and Canadian customers, our products are available through TEAK NYC at teaknewyork.com.
+					<br /><br />For US and Canadian customers, our products are available through TEAK NYC at <a href="https://teaknewyork.com/" target="_blank" class="underline text-blue-700">teaknewyork.com</a>.
 				</p>
 			</details>
 			<details class="group py-4">
@@ -731,7 +718,10 @@ import Testimonials from "../components/Testimonials.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">We get it — seeing (and sinking into) the TEDDY sofa in real life makes all the difference. You can experience it for yourself in one of our showrooms! Check our Showrooms & Friends of OMHU for the latest locations and come feel the comfort firsthand.</p>
+				<p class="mt-3 group-open:animate-fadeIn">
+					We get it — seeing (and sinking into) the TEDDY sofa in real life makes all the difference. You can experience it for yourself in one of our showrooms! Check our <a href="https://omhucph.com/pages/showroom" target="_blank" class="underline text-blue-700">Showrooms & Friends of OMHU</a> for the latest locations and come feel the comfort
+					firsthand.
+				</p>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
