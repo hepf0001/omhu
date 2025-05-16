@@ -1,0 +1,52 @@
+---
+import Link from "../components/Link.astro";
+---
+
+<section class="z-50 w-full fixed">
+    <div class="bg-blue-700 grid place-content-center">
+        <p class="text-neutral-50 py-2">BIG. ICONIC. SOFT. Meet the new <span class="font-bold">TEDDY Plus!</span></p>
+    </div>
+    <div x-data="{ showmenu: false }" class="bg-neutral-1000/20 backdrop-blur-md shadow-lg">
+        <!-- brug "fixed" for at have den på siden hele vejen ned -->
+        <div id="navbar" class="flex flex-row justify-between max-w-7xl mx-auto py-2.5 px-5">
+            <div>
+                <a href="/"><img src="/public/logo/logo.webp" class="w-12 md:w-16" alt="Omhu logo" /></a>
+            </div>
+
+            <!-- Desktop menu -->
+            <!--
+        <nav id="desktopmenu" class="hidden lg:block">
+            <ul class="flex flex-row gap-4">
+                <li><a href="/eksempel">eksempel</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>-->
+
+            <!-- Burger menu button (visible only on mobile) -->
+            <!--<button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
+         -->
+        </div>
+
+        <!-- Mobile menu -->
+        <!-- <nav id="mobilmenu" class="flex flex-col content-center pt-4 lg:hidden" x-show="showmenu" x-transition x-cloak x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+        <ul>
+            <li class="text-center py-2 border-y-2"><a href="/eksempel">eksempel</a></li>
+            <li class="text-center py-2 border-b-2"><a href="#">Link 2</a></li>
+            <li class="text-center py-2 border-b-2"><a href="#">Link 3</a></li>
+            <li class="text-center py-2 border-b-2"><a href="#">Link 4</a></li>
+        </ul>
+    </nav>-->
+    </div>
+</section>
+
+<style>
+    [x-cloak] {
+        display: none !important;
+    }
+</style>

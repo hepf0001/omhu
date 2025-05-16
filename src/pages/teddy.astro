@@ -1,0 +1,285 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
+---
+
+<MainLayout title="Lookbook 2025">
+    <!------------------- Teddy Hero ------------------->
+    <section class="grid md:grid-cols-2 relative">
+        <!-- Venstre (eller top på mobil): Billede -->
+        <div class="relative">
+            <img class="object-cover h-[75vh] md:h-screen w-full" src="/hero_2.webp" alt="Teddy brown" />
+            <div class="absolute inset-0 bg-neutral-1000/20"></div>
+        </div>
+
+        <!-- Tekstoverlay -->
+        <div class="absolute w-full left-0 right-0 p-5 max-w-7xl mx-auto
+                    top-[75%] translate-y-[-100%] md:top-auto md:bottom-0 md:translate-y-0 flex md:items-end">
+            <div class="grid grid-cols-12 py-0 md:py-10">
+                <div class="col-span-12 md:col-span-6 pr-0 md:pr-10">
+                    <h3 class="text-neutral-50 pb-2 md:pb-5">Teddy</h3>
+                    <h5 class="text-neutral-50 pb-2 md:pb-5">12.850,00 DKK</h5>
+                    <p class="text-neutral-50 pb-2 md:pb-5">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</p>
+                    <a href="https://omhucph.com/products/teddy" target="_blank">
+                        <Button variant="primary" size="medium md:large">Buy now</Button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Højre (eller bund på mobil): To billeder -->
+        <div class="grid grid-cols-2 md:grid-cols-1 flex-1">
+            <div class="relative">
+                <img class="object-cover h-[25vh] md:h-[50vh] w-full" src="/compact_and_stylish.webp" alt="Teddy sage" />
+                <div class="absolute inset-0 bg-neutral-1000/20"></div>
+            </div>
+            <div class="relative">
+                <img class="object-cover h-[25vh] md:h-[50vh] w-full" src="/hero_3.webp" alt="Teddy mustard" />
+                <div class="absolute inset-0 bg-neutral-1000/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------- Color ------------------->
+    <section
+        class="max-w-7xl mx-auto p-5 py-20 md:py-32"
+        x-data="{
+        activeImage: '/teddy/teddy_mustard.webp',
+        activeColor: 'Color: Mustard - 5774',
+        colors: [
+            { hex: '#EFEDEB', label: 'Cream white - 5769', image: '/teddy/teddy_cream_white.webp' },
+            { hex: '#DED3CD', label: 'Sand - 5768', image: '/teddy/teddy_sand.webp' },
+            { hex: '#543E34', label: 'Brown - 5765', image: '/teddy/teddy_brown.webp' },
+            { hex: '#224366', label: 'Blue - 5772', image: '/teddy/teddy_blue.webp' },
+            { hex: '#5A98A2', label: 'Turquoise - 5771', image: '/teddy/teddy_turquoise.webp' },
+            { hex: '#405348', label: 'Emerald - 5773', image: '/teddy/teddy_emerald.webp' },
+            { hex: '#869680', label: 'Sage - 5776', image: '/teddy/teddy_sage.webp' },
+            { hex: '#65644F', label: 'Moss - 5777', image: '/teddy/teddy_moss.webp' },
+            { hex: '#A8A977', label: 'Olive - 5778', image: '/teddy/teddy_olive.webp' },
+            { hex: '#E5C15A', label: 'Yellow - 5779', image: '/teddy/teddy_yellow.webp' },
+            { hex: '#AF7F31', label: 'Mustard - 5774', image: '/teddy/teddy_mustard.webp' },
+            { hex: '#C88147', label: 'Tangerine - 5780', image: '/teddy/teddy_tangerine.webp' },
+            { hex: '#B06439', label: 'Orange - 5781', image: '/teddy/teddy_orange.webp' },
+            { hex: '#8D442F', label: 'Rust - 5782', image: '/teddy/teddy_rust.webp' },
+            { hex: '#AD6A67', label: 'Rose - 5764', image: '/teddy/teddy_rose.webp' },
+            { hex: '#BC9FB8', label: 'Purple - 5793', image: '/teddy/teddy_purple.webp' },
+            { hex: '#AC99A5', label: 'Lavender - 5763', image: '/teddy/teddy_lavender.webp' },
+            { hex: '#DABBB7', label: 'Blush - 5784', image: '/teddy/teddy_blush.webp' },
+            { hex: '#BABCC7', label: 'Slate - 5770', image: '/teddy/teddy_slate.webp' },
+            { hex: '#4A4D51', label: 'Charcoal - 5761', image: '/teddy/teddy_charcoal.webp' },
+            { hex: '#292929', label: 'Black - 5786', image: '/teddy/teddy_black.webp' }
+        ]
+    }"
+    >
+        <section class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 md:col-span-6 place-content-center">
+                <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Teddy in 21 colors</h3>
+                <h5 x-text="`Color: ${activeColor}`"></h5>
+                <section class="flex flex-wrap gap-2.5 mt-4">
+                    <template x-for="(color, index) in colors" :key="index">
+                        <div class="w-9 md:w-11.5 h-9 md:h-11.5 rounded-full cursor-pointer transition-transform transform hover:scale-110" :style="`background-color: ${color.hex}`" @click="activeImage = color.image; activeColor = color.label" @mouseenter="activeImage = color.image; activeColor = color.label"></div>
+                    </template>
+                </section>
+            </div>
+            <div class="col-span-12 md:col-span-6">
+                <img :src="activeImage" alt="Teddy color preview" class="w-full transition-opacity duration-300 ease-in-out" />
+            </div>
+        </section>
+    </section>
+
+    <!------------------- Dimensions ------------------->
+    <section class="p-5 max-w-7xl mx-auto">
+        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Product dimensions</h3>
+        <div class="grid md:grid-cols-12 gap-5">
+            <img class="col-span-12 md:col-span-6" src="/teddy_dimensions.webp" alt="Teddy dimensions" />
+            <div class="col-span-12 md:col-span-6 place-content-center">
+                <div class="flex justify-between border-b border-neutral-200 py-2 gap-5">
+                    <p class="font-bold">Overall size</p>
+                    <p>width 200 cm, depth 100 cm, height 70 cm</p>
+                </div>
+                <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
+                    <p class="font-bold">Seat height</p>
+                    <p>34 cm</p>
+                </div>
+                <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
+                    <p class="font-bold">Seat depth</p>
+                    <p>65 cm</p>
+                </div>
+                <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
+                    <p class="font-bold">Seating area</p>
+                    <p>130x65 cm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------- Function ------------------->
+    <section class="p-5 max-w-7xl mx-auto py-20 md:py-32">
+        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Function as</h3>
+        <div class="grid md:grid-cols-12 gap-5">
+            <div class="col-span-12 md:col-span-4">
+                <div class="relative">
+                    <img src="/function_bed.webp" alt="Function as a bed" />
+                    <div class="absolute inset-0 flex items-end p-5">
+                        <h5 class="">Bed</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-4">
+                <div class="relative">
+                    <img src="/function_conversation.webp" alt="Function as a conversation pit" />
+                    <div class="absolute inset-0 flex items-end p-5">
+                        <h5 class="">Conversation pit</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-4">
+                <div class="relative">
+                    <img src="/function_sofa.webp" alt="Function as a sofa" />
+                    <div class="absolute inset-0 flex items-end p-5">
+                        <h5 class="">Sofa</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------- FAQ ------------------->
+    <div class="w-full max-w-3xl p-5 mx-auto">
+        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Got questions? We’ve got answers!</h3>
+        <div class="grid max-w-5xl mx-auto divide-y divide-neutral-200">
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What materials is the TEDDY sofa made of?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">
+                    The TEDDY sofa is upholstered with high-quality corduroy fabric for a soft and cozy feel. It also features durable chrome-plated iron bars for added strength and support. The mattresses, crafted from high-grade cold foam, strike a balance between firm support and comfort for both sitting and sleeping. TEDDY is swathed in plush
+                    corduroy fabric known for its exceptional quality and durability.
+                </p>
+            </details>
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Does the TEDDY sofa require assembly?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">
+                    Only minimal assembly is required. The metal bars come in two pieces that can be easily screwed together by hand—no tools needed! You can add felt pads to the metal bars to make them more slip resistant and protect your floor. The rest of the sofa requires no assembly, so you can enjoy it right away.
+                </p>
+            </details>
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How do I convert the TEDDY sofa into a bed?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">Converting the TEDDY sofa into a bed is quick and easy: <br /><br /><span class="font-bold">1. Fold out the sofa</span> by moving the top mattress to the floor. <br /><br /><span class="font-bold">2. Secure the mattresses</span> using the Velcro slaps to keep them in place.</p>
+            </details>
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How do I clean and maintain the TEDDY sofa?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">The fabric covers on both cushions and mattresses can be easily unzipped and removed for washing. We recommend washing at a maximum of 30°C with a mild, extra-gentle detergent. For best results, turn the fabric inside out before washing.</p>
+            </details>
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Is the TEDDY sofa suitable for daily use as a bed?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">Absolutely! The mattresses are made from high-grade cold foam, designed for both sitting and sleeping. Their firmness ensures durability, meaning they will maintain their shape even with daily use as a bed.</p>
+            </details>
+            <details class="group py-4">
+                <summary class="flex justify-between items-center list-none cursor-pointer">
+                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Can I try the TEDDY sofa in-store before purchasing?</span>
+                    <span class="transition group-open:rotate-180">
+                        <!-- Plus/Minus symbol -->
+                        <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
+                            <span class="group-open:hidden">+</span>
+                            <span class="group-open:block hidden">−</span>
+                        </span>
+                    </span>
+                </summary>
+                <p class="mt-3 group-open:animate-fadeIn">You are always welcome to visit our showrooms. Find the one nearest you <a href="https://omhucph.com/pages/showroom" target="_blank" class="underline text-blue-700">here</a>.</p>
+            </details>
+        </div>
+    </div>
+
+    <!------------------- You might also like ------------------->
+    <section x-data="{ slidenr: 'one' }" class="max-w-7xl mx-auto p-5 py-20 md:py-32">
+        <!-- Header med titel og knapper -->
+        <div class="flex justify-between items-center pb-5 md:pb-10 relative">
+            <!-- Overskrift -->
+            <h2 class="text-h4-mobile md:text-h3-desktop">You might also like</h2>
+
+            <!-- Pilene – vertikalt centreret med overskriften -->
+            <div class="flex items-center gap-5 h-full">
+                <button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
+                    <img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+                </button>
+                <button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
+                    <img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition>
+            <Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
+            <Card url="/teddy" cardimage="teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
+
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="ottoman_yellow.webp" cardimagealt="Ottoman yellow" miljobillede="ottoman_collection.webp" miljobilledealt="Ottoman yellow miljøbillede" produktnavn="Ottoman" produktpris="3.400,00 DKK" />
+            </div>
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="corner_open_moss.webp" cardimagealt="Corner Open moss" miljobillede="shop_the_look_corner_open.webp" miljobilledealt="Corner Open moss miljøbillede" produktnavn="Corner Open" produktpris="19.950,00 DKK" />
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
+            <Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
+            <Card url="/teddy" cardimage="upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+            </div>
+            <div class="hidden md:block">
+                <Card url="/teddy" cardimage="teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
+            </div>
+        </div>
+    </section>
+
+    <style></style>
+</MainLayout>
