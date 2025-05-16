@@ -255,7 +255,7 @@ import Card from "../components/Card.astro";
         </div>
 
         <!-- Slide 1 -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'one'" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
             <Card url="/teddy" cardimage="corner_closed_sage.webp" cardimagealt="Corner closed sage" miljobillede="Corner-Closed_collection.webp" miljobilledealt="Corner closed sage miljøbillede" badgerabat="true" badgerabatsats="20%" produktnavn="Corner Closed" produktpris="21.600,00 DKK" rabatpris="17.280,00 DKK" />
             <Card url="/teddy" cardimage="teddy_brown.webp" cardimagealt="Teddy brown" miljobillede="comfort_focused.webp" miljobilledealt="Teddy brown miljøbillede" badgebest="true" produktnavn="Teddy" produktpris="12.850,00 DKK" />
 
@@ -268,7 +268,7 @@ import Card from "../components/Card.astro";
         </div>
 
         <!-- Slide 2 -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
             <Card url="/teddy" cardimage="teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
             <Card url="/teddy" cardimage="upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
 
