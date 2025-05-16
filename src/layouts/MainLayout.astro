@@ -4,6 +4,18 @@ import Footer from "../components/Footer.astro";
 import "../styles/tailwind.css";
 import "animate.css";
 const { title } = Astro.props;
+const schemamarkup = {
+	"@context": "https://schema.org/",
+	"@type": "Product",
+	name: "Teddy",
+	image: "https://omhucph.netlify.app/teddy/teddy_blue.webp",
+	description:
+		"Comprising two quality mattresses and two angled cushions, TEDDY is designed for easy rearrangement. Secured by three chrome-plated metal bars, TEDDY maintains its flexibility. The mattresses, crafted from high-grade cold foam, strike a balance between firm support and comfort for both sitting and sleeping. The angled cushions are filled with silicon ball fiber encased in an inner fabric sleeve, allowing for easy removal of the outer fabric without disturbing the foam. TEDDY is swathed in plush corduroy fabric known for its exceptional quality and durability. For those seeking customization, TEDDY offers various options. You can always change the color by purchasing a new cover set, so be bold and go with your dream color - don't settle for the safe choice. Easily upgrade to our CORNER sofa by adding to your existing TEDDY sofa. Additionally, you can add cushions for a personalized touch, such as choosing a contrasting color. In addition to its versatility, TEDDY is designed to adapt to all stages of life. TEDDY is the perfect first sofa for someone moving out for the first time—a hub for relaxing, sleeping, and hosting friends. As life progresses, you might move to a bigger home and start a family. TEDDY transforms effortlessly, expanding into a Corner version that doubles as a play area for kids. Perhaps you even change the color to suit your new interior style.",
+	brand: {
+		"@type": "Brand",
+		name: "Omhu",
+	},
+};
 ---
 
 <html lang="en">
@@ -35,5 +47,6 @@ const { title } = Astro.props;
 		<footer>
 			<Footer />
 		</footer>
+		<script type="application/ld+json" set:html="{JSON.stringify(schemamarkup)}" />
 	</body>
 </html>
