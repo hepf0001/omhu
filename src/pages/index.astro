@@ -6,26 +6,26 @@ import Card from "../components/Card.astro";
 import Testimonials from "../components/Testimonials.astro";
 ---
 
-<MainLayout title="Lookbook 2025">
+<MainLayout title="Lookbook 2025" ogtitle="Omhu's Lookbook 2025" description="Campaign site for Omhu’s 2025 lookbook" ogdescription="A campaign site showcasing Omhu’s 2025 lookbook">
 	<!------------------- Slider/Hero ------------------->
 
 	<div class="relative overflow-hidden w-full">
 		<!-- Slides -->
 		<input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" aria-hidden="true" checked />
 		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
-			<img src="/hero_1.webp" class="block w-full h-screen object-cover" />
+			<img src="/hero_1.webp" alt="Close-up of Teddy yellow" class="block w-full h-screen object-cover" />
 			<div class="absolute inset-0 bg-neutral-1000/20"></div>
 			<!-- Overlay -->
 		</div>
 		<input class="carousel-open hidden" type="radio" id="carousel-2" name="carousel" aria-hidden="true" />
 		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
-			<img src="/hero_2.webp" class="block w-full h-screen object-cover" />
+			<img src="/hero_2.webp" alt="Teddy in brown" class="block w-full h-screen object-cover" />
 			<div class="absolute inset-0 bg-neutral-1000/20"></div>
 			<!-- Overlay -->
 		</div>
 		<input class="carousel-open hidden" type="radio" id="carousel-3" name="carousel" aria-hidden="true" />
 		<div class="carousel-item absolute opacity-0 transition-opacity duration-600 ease-out">
-			<img src="/hero_3.webp" class="block w-full h-screen object-cover" />
+			<img src="/hero_3.webp" alt="Teddy in yellow, folded out" class="block w-full h-screen object-cover" />
 			<div class="absolute inset-0 bg-neutral-1000/20"></div>
 			<!-- Overlay -->
 		</div>
@@ -152,7 +152,7 @@ import Testimonials from "../components/Testimonials.astro";
 			<!-- Venstre billede -->
 			<div class="col-span-12 md:col-span-6 relative">
 				<!-- Billede -->
-				<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy og Ottoman Rust" />
+				<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy and Ottoman Rust" />
 				<!-- Tekst og cirkel-overlay -->
 				<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
 					<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
@@ -348,10 +348,10 @@ import Testimonials from "../components/Testimonials.astro";
 		<div class="flex justify-end">
 			<div class="flex items-center gap-5 h-full">
 				<button id="leftArrow" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+					<img src="/pil.svg" alt="Previous" class="w-6 h-6 transform rotate-180" />
 				</button>
 				<button id="rightArrow" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+					<img src="/pil.svg" alt="Next" class="w-6 h-6" />
 				</button>
 			</div>
 		</div>
@@ -415,7 +415,7 @@ import Testimonials from "../components/Testimonials.astro";
 				<!-- Billede 1 -->
 				<div class="relative">
 					<!-- Billede -->
-					<img class="w-full h-full object-cover" src="/shop_the_look_corner_closed.webp" alt="Corner Closed Rust og Pillows Rose" />
+					<img class="w-full h-full object-cover" src="/shop_the_look_corner_closed.webp" alt="Corner Closed Rust and Pillows Rose" />
 					<!-- Tekst og cirkel-overlay -->
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
 						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
@@ -511,10 +511,10 @@ import Testimonials from "../components/Testimonials.astro";
 			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
 				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+					<img src="/pil.svg" alt="Previous" class="w-6 h-6 transform rotate-180" />
 				</button>
 				<button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+					<img src="/pil.svg" alt="Next" class="w-6 h-6" />
 				</button>
 			</div>
 		</div>
@@ -556,10 +556,10 @@ import Testimonials from "../components/Testimonials.astro";
 			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
 				<button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+					<img src="/pil.svg" alt="Previous" class="w-6 h-6 transform rotate-180" />
 				</button>
 				<button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
-					<img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+					<img src="/pil.svg" alt="Next" class="w-6 h-6" />
 				</button>
 			</div>
 		</div>

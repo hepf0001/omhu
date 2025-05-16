@@ -5,7 +5,7 @@ import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
 ---
 
-<MainLayout title="Lookbook 2025">
+<MainLayout title="Teddy" ogtitle="Discover Teddy in details" description="Explore the features and details of the Teddy product" ogdescription="An in-depth look at what makes the Teddy product special">
     <!------------------- Teddy Hero ------------------->
     <section class="grid md:grid-cols-2 relative">
         <!-- Venstre (eller top på mobil): Billede -->
@@ -246,10 +246,10 @@ import Card from "../components/Card.astro";
             <!-- Pilene – vertikalt centreret med overskriften -->
             <div class="flex items-center gap-5 h-full">
                 <button @click="slidenr = 'one'" class="w-6 h-6 flex items-center justify-center">
-                    <img src="/pil.svg" alt="Forrige" class="w-6 h-6 transform rotate-180" />
+                    <img src="/pil.svg" alt="Previous" class="w-6 h-6 transform rotate-180" />
                 </button>
                 <button @click="slidenr = 'two'" class="w-6 h-6 flex items-center justify-center">
-                    <img src="/pil.svg" alt="Næste" class="w-6 h-6" />
+                    <img src="/pil.svg" alt="Next" class="w-6 h-6" />
                 </button>
             </div>
         </div>
