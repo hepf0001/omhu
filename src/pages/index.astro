@@ -118,7 +118,7 @@ import Testimonials from "../components/Testimonials.astro";
 					return window.innerWidth >= 768;
 				}
 			}"
-			class="flex flex-col md:flex-row gap-2 overflow-visible md:overflow-x-auto h-[80vh]"
+			class="flex flex-col md:flex-row gap-5 overflow-visible md:overflow-x-auto h-[80vh]"
 		>
 			<template x-for="(item, index) in items" :key="index">
 				<div
@@ -132,13 +132,13 @@ import Testimonials from "../components/Testimonials.astro";
 					<div class="absolute inset-0 bg-neutral-1000/20 z-0"></div>
 
 					<!-- Label (roteret på desktop, normal på mobil) -->
-					<div class="absolute top-2 left-2 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-h5-mobile md:text-h5-desktop tracking-wide z-10" x-show="active !== index" x-transition>
+					<div class="absolute p-5 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-h5-mobile md:text-h5-desktop tracking-wide z-10" x-show="active !== index" x-transition>
 						<span x-text="item.title"></span>
 					</div>
 
 					<!-- Content -->
-					<div class="absolute bottom-0 p-5 w-full flex flex-col justify-end space-y-3 z-10" x-show="active === index" x-transition>
-						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50 pb-2" x-text="item.title"></h3>
+					<div class="absolute bottom-0 p-5 w-full flex flex-col justify-end z-10" x-show="active === index" x-transition>
+						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50" x-text="item.title"></h3>
 						<p class="text-neutral-50" x-text="item.description"></p>
 					</div>
 				</div>
