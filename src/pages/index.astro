@@ -148,7 +148,7 @@ import Testimonials from "../components/Testimonials.astro";
 
 	<!------------------- Shop the look ------------------->
 	<section class="max-w-7xl mx-auto p-5">
-		<section class="grid grid-cols-12 gap-5">
+		<div class="grid grid-cols-12 gap-5">
 			<!-- Venstre billede -->
 			<div class="col-span-12 md:col-span-6 relative">
 				<!-- Billede -->
@@ -170,27 +170,6 @@ import Testimonials from "../components/Testimonials.astro";
 					<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 					<!-- Lille cirkel ovenpå den store -->
 					<span class="rounded-full bg-neutral-50 w-6 h-6 absolute"></span>
-				</div>
-			</div>
-
-			<!-- Popup -->
-			<div id="popup" class="hidden fixed inset-0 bg-neutral-1000 bg-opacity-50 justify-center items-center z-50">
-				<div class="bg-neutral-50 p-3 w-64 relative">
-					<button id="closePopup" class="absolute top-2 right-2 text-neutral-1000">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-						</svg>
-					</button>
-					<img id="popupImage" class="w-full h-32 object-cover" src="" alt="Product Image" />
-					<div class="flex justify-between items-center mt-2">
-						<div>
-							<h2 id="popupTitle" class="text-lg font-bold"></h2>
-							<p id="popupPrice" class="text-neutral-1000"></p>
-						</div>
-						<a id="popupLink" href="">
-							<Button variant="quaternary" size="medium md:large">→</Button>
-						</a>
-					</div>
 				</div>
 			</div>
 
@@ -228,9 +207,29 @@ import Testimonials from "../components/Testimonials.astro";
 					</a>
 				</div>
 			</div>
-		</section>
+		</div>
 	</section>
 
+	<!-- Popup - genbruges til den næste shop the look -->
+	<div id="popup" class="invisible absolute z-10 left-1/2 -translate-x-1/2">
+		<div class="bg-neutral-50 p-5 w-64 relative">
+			<button id="closePopup" class="absolute top-2 right-2 text-neutral-1000">
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+			<img id="popupImage" class="w-full h-32 object-cover" src="" alt="Product Image" />
+			<div class="flex justify-between items-center mt-2">
+				<div>
+					<h2 id="popupTitle" class="text-lg font-bold"></h2>
+					<p id="popupPrice" class="text-neutral-1000"></p>
+				</div>
+				<a id="popupLink" href="">
+					<Button variant="quaternary" size="medium md:large">→</Button>
+				</a>
+			</div>
+		</div>
+	</div>
 	<!------------------- Upgrade ------------------->
 	<section class="max-w-7xl mx-auto p-5 pt-20 md:pt-32" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
 		<section class="grid grid-cols-12">
@@ -370,7 +369,7 @@ import Testimonials from "../components/Testimonials.astro";
 
 	<!------------------- Shop the look ------------------->
 	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
-		<section class="grid grid-cols-12 gap-5">
+		<div class="grid grid-cols-12 gap-5">
 			<!-- Venstre billede -->
 			<div class="col-span-12 md:col-span-6 relative">
 				<div class="relative">
@@ -386,27 +385,6 @@ import Testimonials from "../components/Testimonials.astro";
 							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">19.950,00 DKK</span>
 						</div>
 					</a>
-				</div>
-			</div>
-
-			<!-- Popup -->
-			<div id="popup" class="hidden fixed inset-0 bg-neutral-1000 bg-opacity-50 justify-center items-center z-50">
-				<div class="bg-neutral-50 p-3 w-64 relative">
-					<button id="closePopup" class="absolute top-2 right-2 text-neutral-1000">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-						</svg>
-					</button>
-					<img id="popupImage" class="w-full h-32 object-cover" src="" alt="Product Image" />
-					<div class="flex justify-between items-center mt-2">
-						<div>
-							<h2 id="popupTitle" class="text-lg font-bold"></h2>
-							<p id="popupPrice" class="text-neutral-1000"></p>
-						</div>
-						<a id="popupLink" href="">
-							<Button variant="quaternary" size="medium md:large">→</Button>
-						</a>
-					</div>
 				</div>
 			</div>
 
@@ -452,7 +430,7 @@ import Testimonials from "../components/Testimonials.astro";
 					</a>
 				</div>
 			</div>
-		</section>
+		</div>
 	</section>
 
 	<!------------------- Timeline ------------------->
@@ -847,8 +825,33 @@ import Testimonials from "../components/Testimonials.astro";
 			opacity: 1;
 		}
 	</style>
-	<script src="/src/index.js" type="module"></script>
 	<script>
+		/**************** Slider/Hero ****************/
+		document.addEventListener("DOMContentLoaded", () => {
+			const slides = document.querySelectorAll(".carousel-open");
+			const bullets = document.querySelectorAll(".carousel-bullet");
+			let currentSlide = 0;
+
+			function goToSlide(index) {
+				slides[currentSlide].checked = false;
+				bullets.forEach((bullet) => bullet.setAttribute("aria-current", "false"));
+				currentSlide = index;
+				slides[currentSlide].checked = true;
+				bullets[currentSlide].setAttribute("aria-current", "true");
+			}
+
+			bullets.forEach((bullet, index) => {
+				bullet.addEventListener("click", () => goToSlide(index));
+			});
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				goToSlide(currentSlide);
+			}
+
+			setInterval(nextSlide, 8000);
+		});
+
 		/**************** Shop the look ****************/
 		document.addEventListener("DOMContentLoaded", function () {
 			const circles = document.querySelectorAll(".circle");
@@ -860,33 +863,30 @@ import Testimonials from "../components/Testimonials.astro";
 			const popupLink = document.getElementById("popupLink");
 
 			circles.forEach((circle) => {
-				circle.addEventListener("click", function (event) {
+				circle.addEventListener("click", function () {
 					const rect = circle.getBoundingClientRect();
 					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 					const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-					// Sørg for, at popup har en defineret højde før positionering
+					// Gør popup synlig men usynlig (så vi kan måle den)
 					popup.classList.remove("hidden");
+					popup.classList.add("invisible");
 
-					// Midlertidigt vise popup for at få korrekt højde, hvis nødvendigt
-					popup.style.visibility = "hidden";
-					popup.style.display = "flex"; // Gør det synligt uden at vise det
+					// Hent popup højde nu hvor den er i DOM'en
 					const popupHeight = popup.offsetHeight;
-					popup.style.display = "";
-					popup.style.visibility = "";
 
-					// Sæt position baseret på klikposition
-					popup.style.position = "absolute";
+					// Sæt positionen korrekt
 					popup.style.top = `${rect.top + scrollTop - popupHeight}px`;
 					popup.style.left = `${rect.left + scrollLeft}px`;
 
-					// Opdater popup indhold
+					// Opdater indhold
 					popupImage.src = circle.getAttribute("data-image");
 					popupTitle.textContent = circle.getAttribute("data-title");
 					popupPrice.textContent = circle.getAttribute("data-price");
 					popupLink.href = circle.getAttribute("data-link");
 
-					popup.classList.remove("hidden");
+					// Vis popup
+					popup.classList.remove("invisible");
 				});
 			});
 
