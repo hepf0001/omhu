@@ -58,7 +58,7 @@ import Testimonials from "../components/Testimonials.astro";
 		<div class="md:pt-20 pt-10">
 			<div class="flex items-center sticky top-0">
 				<div class="grid grid-cols-12">
-					<h1 class="md:text-h1-desktop text-h3-mobile text-center leading-snug col-start-1 md:col-start-4 col-span-12 md:col-span-6">Introducing Teddy Plus – the three-seater designed for ultimate comfort and timeless style.</h1>
+					<h1 class="md:text-h1-desktop text-h3-mobile text-center leading-snug col-start-1 md:col-start-3 col-span-12 md:col-span-8">BIG. ICONIC. SOFT. The three-seater built for comfort. Styled to last. Meet the new TEDDY Plus!</h1>
 				</div>
 			</div>
 			<img class="sticky top-0 w-full h-auto" src="/teddy_plus_blue.webp" alt="Teddy Plus blue" />
@@ -68,7 +68,7 @@ import Testimonials from "../components/Testimonials.astro";
 	<!------------------- Before/After slider ------------------->
 	<section class="grid grid-cols-12 max-w-7xl mx-auto p-5">
 		<div class="col-start-1 col-span-12 md:col-span-6 pb-5 md:pb-10">
-			<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Sofa, bed, or conversation pit</h3>
+			<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Sofa, bed, or conversation pit?</h3>
 			<p>Whether it’s lounging on the sofa, sharing stories with friends, or unwinding in a cozy bed at the end of the day, Teddy flexes to suit your needs. Seamlessly shifting from one function to the next.</p>
 		</div>
 	</section>
@@ -132,7 +132,7 @@ import Testimonials from "../components/Testimonials.astro";
 					<div class="absolute inset-0 bg-neutral-1000/20 z-0"></div>
 
 					<!-- Label (roteret på desktop, normal på mobil) -->
-					<div class="absolute p-5 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-h5-mobile md:text-h5-desktop tracking-wide z-10" x-show="active !== index" x-transition>
+					<div class="absolute p-5 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-h5-mobile md:text-h5-desktop tracking-wide z-10 transition-all duration-800 delay-200 ease-in-out" x-show="active !== index" x-transition>
 						<span x-text="item.title"></span>
 					</div>
 
