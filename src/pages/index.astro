@@ -403,20 +403,20 @@ import Testimonials from "../components/Testimonials.astro";
 				<!-- Billede 1 -->
 				<div class="relative">
 					<!-- Billede -->
-					<img class="w-full h-full object-cover" src="/shop_the_look_corner_closed.webp" alt="Corner Closed Rust and Pillows Rose" />
+					<img class="w-full h-full object-cover" src="/shop_the_look_corner_open2.webp" alt="Corner Open Tangerine and Pillows Rose" />
 					<!-- Tekst og cirkel-overlay -->
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
-						<span class="w-6 h-6 rounded-full bg-[#8D442F]"></span>
+						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Tangerine</span>
+						<span class="w-6 h-6 rounded-full bg-[#C88147]"></span>
 					</div>
 					<!-- Cirklerne ovenpå billedet -->
-					<div class="absolute top-[50%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Corner Closed" data-price="21.600,00 DKK" data-image="/corner_closed_rust.webp" data-link="/teddy">
+					<div class="absolute top-[55%] left-[70%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Corner Open" data-price="19.950,00 DKK" data-image="/corner_open_tangerine.webp" data-link="/teddy">
 						<!-- Større cirkel -->
 						<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 						<!-- Lille cirkel ovenpå den store -->
 						<span class="rounded-full bg-neutral-50 w-6 h-6 absolute"></span>
 					</div>
-					<div class="absolute top-[40%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Pillows" data-price="850,00 DKK" data-image="/pillows_rose.webp" data-link="/teddy">
+					<div class="absolute top-[46%] left-[42%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center cursor-pointer circle animate-pulse" data-title="Pillows" data-price="850,00 DKK" data-image="/pillows_rose.webp" data-link="/teddy">
 						<!-- Større cirkel -->
 						<span class="rounded-full bg-neutral-50/35 w-10 h-10"></span>
 						<!-- Lille cirkel ovenpå den store -->
@@ -523,10 +523,10 @@ import Testimonials from "../components/Testimonials.astro";
 		<!-- Slide 2 -->
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
 			<Card url="/teddy" cardimage="/teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="/shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
-			<Card url="/teddy" cardimage="/upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="/upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+			<Card url="/teddy" cardimage="/upgrade_closed.webp" cardimagealt="Upgrade" miljobillede="/upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
 
 			<div class="hidden md:block">
-				<Card url="/teddy" cardimage="/pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="/pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+				<Card url="/teddy" cardimage="/pillows.webp" cardimagealt="Pillows" miljobillede="/pillows_lavender.webp" miljobilledealt="Pillows lavender miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
 			</div>
 			<div class="hidden md:block">
 				<Card url="/teddy" cardimage="/teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="/shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
