@@ -3,8 +3,8 @@ import Link from "../components/Link.astro";
 ---
 
 <section
-    x-data="{ showmenu: false, lastScroll: 0, isVisible: true }"
-    x-init="
+  x-data="{ showmenu: false, lastScroll: 0, isVisible: true }"
+  x-init="
     window.addEventListener('scroll', () => {
       const current = window.scrollY;
       if (current > lastScroll && current > 50) {
@@ -15,21 +15,21 @@ import Link from "../components/Link.astro";
       lastScroll = current;
     });
   "
-    :class="{
+  :class="{
     'translate-y-0': isVisible,
     '-translate-y-full': !isVisible
   }"
-    class="z-50 w-full fixed top-0 left-0 transition-transform duration-300 ease-in-out"
+  class="z-30 w-full fixed top-0 left-0 transition-transform duration-300 ease-in-out"
 >
-    <div id="navbar" class="flex flex-row justify-between max-w-7xl mx-auto py-2.5 px-5">
-        <div>
-            <a href="/"><img src="/logo/logo.webp" class="w-12 md:w-18" alt="Omhu logo" /></a>
-        </div>
+  <div id="navbar" class="flex flex-row justify-between max-w-7xl mx-auto py-2.5 px-5">
+    <div>
+      <a href="/"><img src="/logo/logo.webp" class="w-12 md:w-18" alt="Omhu logo" /></a>
     </div>
+  </div>
 </section>
 
 <style>
-    [x-cloak] {
-        display: none !important;
-    }
+  [x-cloak] {
+    display: none !important;
+  }
 </style>

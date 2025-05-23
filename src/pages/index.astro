@@ -41,10 +41,10 @@ import Heading from "../components/Heading.astro";
 		<!-- Shared Text Overlay -->
 		<article class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto p-5 z-20 content-center">
 			<div class="col-start-1 col-span-12 md:col-span-8">
-				<div class="pb-14">
-					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50">Lookbook 2025</h5>
-					<h1 class="md:text-h1-desktop text-h3-mobile leading-snug text-neutral-50">One sofa. Always evolving.</h1>
-					<h5 class="md:text-h5-desktop text-h5-mobile text-neutral-50">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</h5>
+				<div class="pb-5 md:pb-10">
+					<Heading htmlheading="h1" size="h6" stylingclasses="text-neutral-50">Lookbook 2025</Heading>
+					<Heading htmlheading="h2" size="h3_h1" stylingclasses="text-neutral-50">One sofa. Always evolving.</Heading>
+					<Heading htmlheading="h3" size="h5" stylingclasses="text-neutral-50">Change the cover when the mood shifts. Add a module when life expands. TEDDY transforms with you – into a sofa, bed, or conversation pit – always ready for what’s next.</Heading>
 				</div>
 				<div class="flex gap-2 md:gap-5">
 					<a href="/teddy"> <Button variant="primary" size="medium md:large">Meet the original Teddy</Button></a>
@@ -53,15 +53,13 @@ import Heading from "../components/Heading.astro";
 			</div>
 		</article>
 	</div>
-	<Heading htmlheading="h3" size="xlarge">XL heading</Heading>
-	<Heading htmlheading="h3" size="large">L heading</Heading>
 
 	<!------------------- Teddy Plus ------------------->
 	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<div class="md:pt-20 pt-10">
 			<div class="flex items-center sticky top-0">
 				<div class="grid grid-cols-12">
-					<h1 class="md:text-h1-desktop text-h3-mobile text-center leading-snug col-start-1 md:col-start-3 col-span-12 md:col-span-8">BIG. ICONIC. SOFT. The three-seater built for comfort. Styled to last. Meet the new TEDDY Plus!</h1>
+					<Heading htmlheading="h1" size="h3_h1" stylingclasses="text-center col-start-1 md:col-start-3 col-span-12 md:col-span-8">BIG. ICONIC. SOFT. The three-seater built for comfort. Styled to last. Meet the new TEDDY Plus!</Heading>
 				</div>
 			</div>
 			<img class="sticky top-0 w-full h-auto" src="/teddy_plus_blue.webp" alt="Teddy Plus blue" />
@@ -71,8 +69,8 @@ import Heading from "../components/Heading.astro";
 	<!------------------- Before/After slider ------------------->
 	<section class="grid grid-cols-12 max-w-7xl mx-auto p-5">
 		<div class="col-start-1 col-span-12 md:col-span-6 pb-5 md:pb-10">
-			<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Sofa, bed, or conversation pit?</h3>
-			<p>Whether it’s lounging on the sofa, sharing stories with friends, or unwinding in a cozy bed at the end of the day, Teddy flexes to suit your needs. Seamlessly shifting from one function to the next.</p>
+			<Heading htmlheading="h1" size="h4_h3" stylingclasses="">Sofa, bed, or conversation pit?</Heading>
+			<Heading htmlheading="p" size="p" stylingclasses="">Whether it’s lounging on the sofa, sharing stories with friends, or unwinding in a cozy bed at the end of the day, Teddy flexes to suit your needs. Seamlessly shifting from one function to the next.</Heading>
 		</div>
 	</section>
 
@@ -80,12 +78,12 @@ import Heading from "../components/Heading.astro";
 		<div class="diff-item-1" role="img" tabindex="0">
 			<img alt="Teddy bed" src="/before_after_bed.webp" />
 			<div class="absolute inset-0 bg-neutral-1000/20"></div>
-			<h4 class="content-end py-3 md:py-5 pl-5 md:pl-28">Bed</h4>
+			<Heading htmlheading="h1" size="h5_h4" stylingclasses="content-end py-3 md:py-5 pl-5 md:pl-28">Bed</Heading>
 		</div>
 		<div class="grid diff-item-2" role="img">
 			<img alt="Teddy sofa" src="/before_after_sofa.webp" />
 			<div class="absolute inset-0 bg-neutral-1000/20"></div>
-			<h4 class="content-end text-end py-3 md:py-5 pr-5 md:pr-28">Sofa</h4>
+			<Heading htmlheading="h1" size="h5_h4" stylingclasses="content-end text-end py-3 md:py-5 pr-5 md:pr-28">Sofa</Heading>
 		</div>
 		<div class="diff-resizer"></div>
 	</figure>
@@ -135,14 +133,14 @@ import Heading from "../components/Heading.astro";
 					<div class="absolute inset-0 bg-neutral-1000/20 z-0"></div>
 
 					<!-- Label (roteret på desktop, normal på mobil) -->
-					<div class="absolute p-5 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-h5-mobile md:text-h5-desktop tracking-wide z-10 transition-all duration-800 delay-200 ease-in-out" x-show="active !== index" x-transition>
+					<div class="absolute p-5 md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 md:rotate-90 whitespace-nowrap text-[1.250rem] md:text-[2.438rem] tracking-wide z-10 transition-all duration-800 delay-200 ease-in-out" x-show="active !== index" x-transition>
 						<span x-text="item.title"></span>
 					</div>
 
 					<!-- Content -->
 					<div class="absolute bottom-0 p-5 w-full flex flex-col justify-end z-10" x-show="active === index" x-transition>
-						<h3 class="text-h4-mobile md:text-h3-desktop text-neutral-50" x-text="item.title"></h3>
-						<p class="text-neutral-50" x-text="item.description"></p>
+						<h1 class="text-neutral-50 text-[1.250rem] md:text-[2.438rem]" x-text="item.title"></h1>
+						<p class="text-neutral-50 text-[0.875rem] md:text-[1.000rem]" x-text="item.description"></p>
 					</div>
 				</div>
 			</template>
@@ -153,7 +151,7 @@ import Heading from "../components/Heading.astro";
 	<section class="max-w-7xl mx-auto p-5">
 		<section class="grid grid-cols-12">
 			<div class="col-start-1 col-span-12 md:col-span-6 pb-5">
-				<h3 class="text-h4-mobile md:text-h3-desktop">What is your look?</h3>
+				<Heading htmlheading="h1" size="h4_h3" stylingclasses="">What is your look?</Heading>
 			</div>
 		</section>
 		<div class="grid grid-cols-12 gap-5">
@@ -163,7 +161,7 @@ import Heading from "../components/Heading.astro";
 				<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_teddy_ottoman.webp" alt="Teddy and Ottoman Rust" />
 				<!-- Tekst og cirkel-overlay -->
 				<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-					<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Rust</span>
+					<Heading htmlheading="h2" size="p" stylingclasses="">Rust</Heading>
 					<span class="w-6 h-6 rounded-full bg-[#8D442F]"></span>
 				</div>
 				<!-- Cirklerne ovenpå billedet -->
@@ -187,14 +185,14 @@ import Heading from "../components/Heading.astro";
 				<div class="relative">
 					<img class="w-full h-full object-cover" src="/shop_the_look_teddy_chair.webp" alt="Teddy Chair Sage" />
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Sage</span>
+						<Heading htmlheading="h2" size="p" stylingclasses="">Sage</Heading>
 						<span class="w-6 h-6 rounded-full bg-[#869680]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5 hover:scale-105 duration-700" href="/teddy">
 						<img class="h-20 w-20" src="/teddy_chair_sage.webp" alt="Teddy Chair Sage" />
-						<div class="grid grid-rows-2 gap-2 md:gap-4">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Chair</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">7.495,00 DKK</span>
+						<div class="grid grid-rows-2">
+							<Heading htmlheading="h2" size="h5" stylingclasses="">Teddy Chair</Heading>
+							<Heading htmlheading="p" size="p" stylingclasses="">7.495,00 DKK</Heading>
 						</div>
 					</a>
 				</div>
@@ -203,14 +201,14 @@ import Heading from "../components/Heading.astro";
 				<div class="relative">
 					<img class="w-full h-full object-cover" src="/shop_the_look_teddy.webp" alt="Teddy Moss" />
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Moss</span>
+						<Heading htmlheading="h2" size="p" stylingclasses="">Moss</Heading>
 						<span class="w-6 h-6 rounded-full bg-[#65644F]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5 hover:scale-105 duration-700" href="/teddy">
 						<img class="h-20 w-20" src="/teddy_moss.webp" alt="Teddy Moss" />
-						<div class="grid grid-rows-2 gap-2 md:gap-4">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">12.850,00 DKK</span>
+						<div class="grid grid-rows-2">
+							<Heading htmlheading="h2" size="h5" stylingclasses="">Teddy</Heading>
+							<Heading htmlheading="p" size="p" stylingclasses="">12.850,00 DKK</Heading>
 						</div>
 					</a>
 				</div>
@@ -219,7 +217,7 @@ import Heading from "../components/Heading.astro";
 	</section>
 
 	<!-- Popup - genbruges til den næste shop the look -->
-	<div id="popup" class="invisible absolute z-10 left-1/2 -translate-x-1/2">
+	<div id="popup" class="invisible absolute z-50 left-1/2 -translate-x-1/2">
 		<div class="bg-neutral-50 p-5 w-64 relative">
 			<button id="closePopup" class="absolute top-2 right-2 text-neutral-1000">
 				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -229,8 +227,10 @@ import Heading from "../components/Heading.astro";
 			<img id="popupImage" class="w-full h-32 object-cover" src="" alt="Product Image" />
 			<div class="flex justify-between items-center mt-2">
 				<div>
-					<h2 id="popupTitle" class="text-lg font-bold"></h2>
-					<p id="popupPrice" class="text-neutral-1000"></p>
+					<Heading htmlheading="h2" size="h5" stylingclasses="" id="popupTitle" />
+					<Heading htmlheading="p" size="p" stylingclasses="" id="popupPrice" />
+					<h2 id="popupTitle" class="text-[1.000rem] md:text-[1.562rem]"></h2>
+					<p id="popupPrice" class="text-[0.875rem] md:text-[1.000rem]"></p>
 				</div>
 				<a id="popupLink" href="">
 					<Button variant="quaternary" size="medium md:large">→</Button>
@@ -242,22 +242,22 @@ import Heading from "../components/Heading.astro";
 	<section class="max-w-7xl mx-auto p-5 pt-20 md:pt-32" x-data="{ activeImage: '/upgrade_corner_closed.webp' }">
 		<section class="grid grid-cols-12">
 			<div class="col-start-1 col-span-12 md:col-span-6 pb-5">
-				<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">Upgrade Teddy – Designed to grow</h3>
-				<p>Life shifts, and so can your sofa. Upgrade your Teddy to fit your evolving space and lifestyle – Corner Closed, Corner Open, or Teddy Plus.</p>
+				<Heading htmlheading="h1" size="h4_h3" stylingclasses="">Upgrade Teddy – Designed to grow</Heading>
+				<Heading htmlheading="p" size="p" stylingclasses="">Life shifts, and so can your sofa. Upgrade your Teddy to fit your evolving space and lifestyle – Corner Closed, Corner Open, or Teddy Plus.</Heading>
 			</div>
 		</section>
 
 		<section class="grid grid-cols-12">
 			<div class="col-span-12 md:col-span-6 place-content-center">
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_closed.webp'" @click="activeImage = '/upgrade_corner_closed.webp'" :class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+				<h2 class="text-[2.438rem] md:text-[3.812rem] cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_closed.webp'" @click="activeImage = '/upgrade_corner_closed.webp'" :class="activeImage === '/upgrade_corner_closed.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
 					Corner closed
-				</h1>
+				</h2>
 
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
+				<h2 class="text-[2.438rem] md:text-[3.812rem] cursor-pointer transition-colors duration-200 pb-5" @mouseenter="activeImage = '/upgrade_corner_open.webp'" @click="activeImage = '/upgrade_corner_open.webp'" :class="activeImage === '/upgrade_corner_open.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">
 					Corner open
-				</h1>
+				</h2>
 
-				<h1 class="text-h2-mobile md:text-h1-desktop cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_teddy_plus.webp'" @click="activeImage = '/upgrade_teddy_plus.webp'" :class="activeImage === '/upgrade_teddy_plus.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">Teddy Plus</h1>
+				<h2 class="text-[2.438rem] md:text-[3.812rem] cursor-pointer transition-colors duration-200" @mouseenter="activeImage = '/upgrade_teddy_plus.webp'" @click="activeImage = '/upgrade_teddy_plus.webp'" :class="activeImage === '/upgrade_teddy_plus.webp' ? 'text-neutral-1000' : 'text-neutral-400 hover:text-neutral-1000'">Teddy Plus</h2>
 			</div>
 
 			<div class="col-span-12 md:col-span-6">
@@ -289,7 +289,7 @@ import Heading from "../components/Heading.astro";
 			<div class="absolute inset-0 z-20">
 				<div class="max-w-7xl mx-auto p-5 md:py-10">
 					<div class="flex items-start justify-start">
-						<h2 class="text-neutral-50 text-h4-mobile md:text-h2-desktop">Every piece in 21 colors</h2>
+						<Heading htmlheading="h1" size="h4_h2" stylingclasses="text-neutral-50">Every piece in 21 color</Heading>
 					</div>
 				</div>
 			</div>
@@ -339,8 +339,8 @@ import Heading from "../components/Heading.astro";
 	>
 		<section class="grid grid-cols-12 gap-5">
 			<div class="col-span-12 md:col-span-6 place-content-center">
-				<h3 class="text-h4-mobile md:text-h3-desktop pb-2 md:pb-5">A new mood, in a new cover</h3>
-				<p class="pb-2 md:pb-5">21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</p>
+				<Heading htmlheading="h2" size="h4_h3" stylingclasses="">A new mood, in a new cover</Heading>
+				<Heading htmlheading="p" size="p" stylingclasses="pb-2 md:pb-5">21 colors. Endless moods. Find your favorite — and swap your cover whenever you’re ready for something new.</Heading>
 				<a href="/teddy">
 					<Button variant="primary" size="medium md:large">Explore extra covers</Button>
 				</a>
@@ -367,7 +367,7 @@ import Heading from "../components/Heading.astro";
 		<div id="carousel" class="flex overflow-x-auto scroll-smooth pt-10 pb-2 pl-0 -space-x-5">
 			<template x-for="(color, index) in colors" :key="index">
 				<div class="relative w-[100px] h-[150px] rounded-lg flex-shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-6 shadow-md group" :style="`background-color: ${color.hex}; z-index: ${10 + index};`" @click="activeImage = color.image; toggleActive(index)" @mouseenter="activeImage = color.image">
-					<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-p-mobile md:text-p-desktop" :class="getTextClass(color.hex)">
+					<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[0.875rem] md:text-[1.000rem]" :class="getTextClass(color.hex)">
 						<span x-text="color.name"></span>
 					</div>
 				</div>
@@ -379,7 +379,7 @@ import Heading from "../components/Heading.astro";
 	<section class="max-w-7xl mx-auto p-5 py-20 md:py-32">
 		<section class="grid grid-cols-12">
 			<div class="col-start-1 col-span-12 md:col-span-6 pb-5">
-				<h3 class="text-h4-mobile md:text-h3-desktop">Got a favourite yet?</h3>
+				<Heading htmlheading="h1" size="h4_h3" stylingclasses="">Got a favourite yet?</Heading>
 			</div>
 		</section>
 		<div class="grid grid-cols-12 gap-5">
@@ -388,14 +388,14 @@ import Heading from "../components/Heading.astro";
 				<div class="relative">
 					<img class="h-[350px] md:h-[80vh] w-full object-cover" src="/shop_the_look_corner_open.webp" alt="Corner Open Moss" />
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Moss</span>
+						<Heading htmlheading="h2" size="p" stylingclasses="">Moss</Heading>
 						<span class="w-6 h-6 rounded-full bg-[#65644F]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5 hover:scale-105 duration-700" href="/teddy">
 						<img class="h-20 w-20" src="/corner_open_moss.webp" alt="Corner Open Moss" />
-						<div class="grid grid-rows-2 gap-2 md:gap-4">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Corner Open</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">19.950,00 DKK</span>
+						<div class="grid grid-rows-2">
+							<Heading htmlheading="h2" size="h5" stylingclasses="">Corner Open</Heading>
+							<Heading htmlheading="p" size="p" stylingclasses="">19.950,00 DKK</Heading>
 						</div>
 					</a>
 				</div>
@@ -409,7 +409,7 @@ import Heading from "../components/Heading.astro";
 					<img class="w-full h-full object-cover" src="/shop_the_look_corner_open2.webp" alt="Corner Open Tangerine and Pillows Rose" />
 					<!-- Tekst og cirkel-overlay -->
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Tangerine</span>
+						<Heading htmlheading="h2" size="p" stylingclasses="">Tangerine</Heading>
 						<span class="w-6 h-6 rounded-full bg-[#C88147]"></span>
 					</div>
 					<!-- Cirklerne ovenpå billedet -->
@@ -431,14 +431,14 @@ import Heading from "../components/Heading.astro";
 				<div class="relative">
 					<img class="w-full h-full object-cover" src="/shop_the_look_teddy_plus.webp" alt="Teddy Plus Turquoise" />
 					<div class="absolute top-0 left-0 mt-2.5 md:mt-5 flex items-center gap-2 bg-neutral-50 px-3 py-1 rounded-r-full">
-						<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Moss</span>
+						<Heading htmlheading="h2" size="p" stylingclasses="">Turquoise</Heading>
 						<span class="w-6 h-6 rounded-full bg-[#5A98A2]"></span>
 					</div>
 					<a class="absolute bottom-0 left-0 flex gap-5 items-center bg-neutral-50 p-2.5 pr-5 m-2.5 hover:scale-105 duration-700" href="/teddy">
 						<img class="h-20 w-20" src="/teddy_plus_turquoise.webp" alt="Teddy Plus Turquoise" />
-						<div class="grid grid-rows-2 gap-2 md:gap-4">
-							<span class="text-h5-mobile md:text-h5-desktop text-neutral-1000">Teddy Plus</span>
-							<span class="text-p-mobile md:text-p-desktop text-neutral-1000">18.200,00 DKK</span>
+						<div class="grid grid-rows-2">
+							<Heading htmlheading="h2" size="h5" stylingclasses="">Teddy Plus</Heading>
+							<Heading htmlheading="p" size="p" stylingclasses="">18.200,00 DKK</Heading>
 						</div>
 					</a>
 				</div>
@@ -450,43 +450,43 @@ import Heading from "../components/Heading.astro";
 	<section>
 		<!---------------- Friends first ---------------->
 		<div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/friends_first.webp')">
-			<div class="absolute inset-0 bg-neutral-1000/30"></div>
+			<div class="absolute inset-0 bg-neutral-1000/40"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax1 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile">1992 - 2018</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">Friends first</h1>
-					<p class="text-neutral-50">
-						Born in Denmark, OMHU is the culmination of a friendship spanning over 30 years. Jonas and Frederik share a deep passion for furniture and interior design, which ignited their dream of trading curated vintage pieces. <br /><br />A few years ago, they decided to take a leap of faith, leaving their 9 to 5 jobs behind to pursue
-						this shared passion. What began with an old van and countless flea market adventures soon blossomed into ‘Kram & Klenodier’, their Instagram-based vintage shop founded in 2018.
-					</p>
+					<Heading htmlheading="h1" size="h5" stylingclasses="text-neutral-50">1992 - 2018</Heading>
+					<Heading htmlheading="h2" size="h3_h1" stylingclasses="text-neutral-50">Friends first</Heading>
+					<Heading htmlheading="p" size="p" stylingclasses="text-neutral-50"
+						>Born in Denmark, OMHU is the culmination of a friendship spanning over 30 years. Jonas and Frederik share a deep passion for furniture and interior design, which ignited their dream of trading curated vintage pieces. <br /><br />A few years ago, they decided to take a leap of faith, leaving their 9 to 5 jobs behind to
+						pursue this shared passion. What began with an old van and countless flea market adventures soon blossomed into ‘Kram & Klenodier’, their Instagram-based vintage shop founded in 2018.</Heading
+					>
 				</div>
 			</div>
 		</div>
 		<!---------------- Enter Teddy ---------------->
 		<div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/enter_teddy.webp')">
-			<div class="absolute inset-0 bg-neutral-1000/30"></div>
+			<div class="absolute inset-0 bg-neutral-1000/40"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax2 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile">2022</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">Enter Teddy</h1>
-					<p class="text-neutral-50">
-						In the spring of 2022, the concept for the Teddy sofa was conceived, drawing inspiration from their diverse experiences with vintage furniture traded through ‘Kram & Klenodier’. A symbol of the unique vision and dedication that OMHU represents, Teddy became a central piece in their journey. <br /><br />It was during this
-						creative process that the brand OMHU was born, not just to encompass Teddy but to pave the way for future designs. Today, OMHU proudly stands as a testament to our vision and dedication to creating unique, high-quality furniture pieces.
-					</p>
+					<Heading htmlheading="h1" size="h5" stylingclasses="text-neutral-50">2022</Heading>
+					<Heading htmlheading="h2" size="h3_h1" stylingclasses="text-neutral-50">Enter Teddy</Heading>
+					<Heading htmlheading="p" size="p" stylingclasses="text-neutral-50"
+						>In the spring of 2022, the concept for the Teddy sofa was conceived, drawing inspiration from their diverse experiences with vintage furniture traded through ‘Kram & Klenodier’. A symbol of the unique vision and dedication that OMHU represents, Teddy became a central piece in their journey. <br /><br />It was during this
+						creative process that the brand OMHU was born, not just to encompass Teddy but to pave the way for future designs. Today, OMHU proudly stands as a testament to our vision and dedication to creating unique, high-quality furniture pieces.</Heading
+					>
 				</div>
 			</div>
 		</div>
 		<!---------------- A Holistic Approach ---------------->
 		<div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/a_holistic_approach.webp')">
-			<div class="absolute inset-0 bg-neutral-1000/30"></div>
+			<div class="absolute inset-0 bg-neutral-1000/40"></div>
 			<div class="max-w-7xl mx-auto p-5 grid grid-cols-12">
 				<div class="stickyparallax3 z-10 col-span-12 md:col-span-6">
-					<h5 class="text-neutral-50 md:text-h5-desktop text-h5-mobile pb-2">2024</h5>
-					<h1 class="text-neutral-50 md:text-h1-desktop text-h3-mobile pb-8 md:pb-10">A Holistic Approach</h1>
-					<p class="text-neutral-50">
-						The vision of OMHU extends beyond design; Creating products that adapt to all stages of life is at the heart of what we do. We believe in longevity—a critical focus in a world struggling with overconsumption. <br /><br />Instead of replacing furniture, our designs evolve with you, adapting seamlessly to your changing needs.
-						At OMHU, we’re committed to creating designs that grow with you, proving that thoughtful design can last a lifetime.
-					</p>
+					<Heading htmlheading="h1" size="h5" stylingclasses="text-neutral-50">2024</Heading>
+					<Heading htmlheading="h2" size="h3_h1" stylingclasses="text-neutral-50">A Holistic Approach</Heading>
+					<Heading htmlheading="p" size="p" stylingclasses="text-neutral-50"
+						>The vision of OMHU extends beyond design; Creating products that adapt to all stages of life is at the heart of what we do. We believe in longevity—a critical focus in a world struggling with overconsumption. <br /><br />Instead of replacing furniture, our designs evolve with you, adapting seamlessly to your changing needs.
+						At OMHU, we’re committed to creating designs that grow with you, proving that thoughtful design can last a lifetime.</Heading
+					>
 				</div>
 			</div>
 		</div>
@@ -497,7 +497,7 @@ import Heading from "../components/Heading.astro";
 		<!-- Header med titel og knapper -->
 		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
 			<!-- Overskrift -->
-			<h2 class="text-h4-mobile md:text-h3-desktop">Explore the collection</h2>
+			<Heading htmlheading="h1" size="h4_h3" stylingclasses="">Explore the collection</Heading>
 
 			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
@@ -542,7 +542,7 @@ import Heading from "../components/Heading.astro";
 		<!-- Header med titel og knapper -->
 		<div class="flex justify-between items-center pb-5 md:pb-10 relative">
 			<!-- Overskrift -->
-			<h2 class="text-h4-mobile md:text-h3-desktop">Customer feedback</h2>
+			<Heading htmlheading="h1" size="h4_h3" stylingclasses="">Got questions? We’ve got good answers.</Heading>
 
 			<!-- Pilene – vertikalt centreret med overskriften -->
 			<div class="flex items-center gap-5 h-full">
@@ -597,11 +597,11 @@ import Heading from "../components/Heading.astro";
 
 	<!------------------- FAQ ------------------->
 	<div class="w-full max-w-3xl p-5 mx-auto py-20 md:py-32">
-		<h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Got questions? We’ve got answers!</h3>
+		<Heading htmlheading="h1" size="h4_h3" stylingclasses="pb-5 md:pb-10">Got questions? We’ve got answers!</Heading>
 		<div class="grid max-w-5xl mx-auto divide-y divide-neutral-200">
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What do I do if my sofa or other products arrives damaged?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">What do I do if my sofa or other products arrives damaged?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -610,15 +610,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					If your sofa or any other product arrives damaged, please follow these steps:<br /><br /><span class="font-bold">Document the Damage:</span> Take clear photos of the damage as soon as possible. This will help us understand the issue and expedite the process. <br /><br /><span class="font-bold">Contact Our Support Team:</span> Reach
 					out to us at <span class="underline text-blue-700">hello@omhucph.com</span>, if possible, within 48 hours of receiving the item. Please provide your order number, a brief description of the damage, and the photos you took. <br /><br /><span class="font-bold">We’ll Take Care of the Rest:</span> Our team will review your case and work
-					with you to find the best solution, whether it’s a replacement, repair, or other suitable option. Your satisfaction is our priority, and we’ll make sure to resolve the issue quickly and effectively.
-				</p>
+					with you to find the best solution, whether it’s a replacement, repair, or other suitable option. Your satisfaction is our priority, and we’ll make sure to resolve the issue quickly and effectively.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How much does shipping cost?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How much does shipping cost?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -627,14 +627,14 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					Shipping costs can be estimated directly on the product page, and the exact price will always be shown at checkout. The cost varies depending on your location, and it can fluctuate over time due to factors like shipping routes and courier availability. <br /><br />We understand that shipping a sofa can seem like a significant
-					expense. Large furniture requires special freight, and we work closely with trusted couriers who specialize in handling our products with care. This ensures your sofa arrives safely and within the expected timeframe, providing you with the high-quality OMHU experience you deserve.
-				</p>
+					expense. Large furniture requires special freight, and we work closely with trusted couriers who specialize in handling our products with care. This ensures your sofa arrives safely and within the expected timeframe, providing you with the high-quality OMHU experience you deserve.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How long does delivery take?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How long does delivery take?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -643,17 +643,17 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					Our estimated delivery time is 3-6 weeks, as we produce all orders on demand and in sequence. This means that production time is not affected by the model, color, or destination of your order. <br /><br />
 
 					Because each piece is made to order, we can’t provide an exact delivery date upfront. However, as soon as your order is ready for dispatch, you will receive an email with the subject "Your order is on the way." From there, our shipping partner will keep you updated and coordinate a delivery date that works best for you.
 
-					<br /><br />We appreciate your patience — your OMHU piece is being carefully crafted just for you!
-				</p>
+					<br /><br />We appreciate your patience — your OMHU piece is being carefully crafted just for you!</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How can I get the TEDDY if you do not ship to my country?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How can I get the TEDDY if you do not ship to my country?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -662,19 +662,19 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					Love our original TEDDY sofa but can’t order it in your country yet? We hear you! OMHU is on a journey to bring our designs to new markets around the world, and your interest helps shape where we ship next.
 
 					<br /><br />Sign up and help us prioritize your country through this link: <a href="https://omhucph.com/pages/waitlist" target="_blank" class="underline text-blue-700">https://omhucph.com/pages/waitlist</a>
 
 					<br /><br />We’re expanding quickly and adding new countries every month! Sign up below to let us know where you are, and we’ll keep you updated on future launches in your region.
 
-					<br /><br />Together, we’re building a global OMHU community – and we can’t wait to bring our designs to you.
-				</p>
+					<br /><br />Together, we’re building a global OMHU community – and we can’t wait to bring our designs to you.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Do you deliver outside the EU?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Do you deliver outside the EU?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -683,15 +683,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					Yes we do! At the moment we also ship to the US and Canada.
 
-					<br /><br />For US and Canadian customers, our products are available through TEAK NYC at <a href="https://teaknewyork.com/" target="_blank" class="underline text-blue-700">teaknewyork.com</a>.
-				</p>
+					<br /><br />For US and Canadian customers, our products are available through TEAK NYC at <a href="https://teaknewyork.com/" target="_blank" class="underline text-blue-700">teaknewyork.com</a>.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Can I get free color swatches?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Can I get free color swatches?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -700,15 +700,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					Yes! We know choosing the perfect color is a big deal, so we offer free fabric swatches to help you see and feel the materials before making your decision — you only have to cover the shipping.
 
-					<br /><br />You can order them directly on our website — just add your favorite colors to the cart, and we’ll send them your way.
-				</p>
+					<br /><br />You can order them directly on our website — just add your favorite colors to the cart, and we’ll send them your way.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Where can I see the TEDDY sofa in person?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Where can I see the TEDDY sofa in person?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -717,14 +717,14 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
 					We get it — seeing (and sinking into) the TEDDY sofa in real life makes all the difference. You can experience it for yourself in one of our showrooms! Check our <a href="https://omhucph.com/pages/showroom" target="_blank" class="underline text-blue-700">Showrooms & Friends of OMHU</a> for the latest locations and come feel the comfort
-					firsthand.
-				</p>
+					firsthand.</Heading
+				>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Will the mattresses slide apart when using TEDDY as a bed?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Will the mattresses slide apart when using TEDDY as a bed?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -733,11 +733,11 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">Nope! TEDDY is designed to stay in place. <br /><br />The mattresses have Velcro strips underneath, and we also include extra Velcro strips that you can use to attach the mattresses together — so they won’t slide apart when in bed mode.</p>
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"> Nope! TEDDY is designed to stay in place. <br /><br />The mattresses have Velcro strips underneath, and we also include extra Velcro strips that you can use to attach the mattresses together — so they won’t slide apart when in bed mode.</Heading>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How is TEDDY different from cheaper alternatives online?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How is TEDDY different from cheaper alternatives online?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -746,15 +746,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
-					We know there are lookalikes out there, but TEDDY isn’t just about looks — it’s about quality, durability, and craftsmanship. We’ve spent years perfecting the materials, design, and feel to make TEDDY truly unique.
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"
+					>We know there are lookalikes out there, but TEDDY isn’t just about looks — it’s about quality, durability, and craftsmanship. We’ve spent years perfecting the materials, design, and feel to make TEDDY truly unique.
 
 					<br /><br />Cheaper versions often lack the same high-quality foam, sturdy construction, and longlasting fabric that make TEDDY as comfortable and long-lasting as it is. To ensure you’re getting the real deal, we recommend purchasing only through omhucph.com or teaknewyork.com for US customers.
-				</p>
+				</Heading>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Can mold form underneath the TEDDY mattresses?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Can mold form underneath the TEDDY mattresses?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -763,15 +763,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
-					We know there are lookalikes out there, but TEDDY isn’t just about looks — it’s about quality, durability, and craftsmanship. We’ve spent years perfecting the materials, design, and feel to make TEDDY truly unique.
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"
+					>We know there are lookalikes out there, but TEDDY isn’t just about looks — it’s about quality, durability, and craftsmanship. We’ve spent years perfecting the materials, design, and feel to make TEDDY truly unique.
 
 					<br /><br />Cheaper versions often lack the same high-quality foam, sturdy construction, and longlasting fabric that make TEDDY as comfortable and long-lasting as it is. To ensure you’re getting the real deal, we recommend purchasing only through omhucph.com or teaknewyork.com for US customers.
-				</p>
+				</Heading>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Can mold form underneath the TEDDY mattresses?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Can mold form underneath the TEDDY mattresses?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -780,15 +780,15 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
-					Nope! TEDDY is designed to prevent moisture buildup. All our mattress covers have a technical fabric underneath that acts as a barrier against moisture formation.
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"
+					>Nope! TEDDY is designed to prevent moisture buildup. All our mattress covers have a technical fabric underneath that acts as a barrier against moisture formation.
 
 					<br /><br />The mattresses themselves are made from cold foam (High Resilience foam), which has an open-cell structure that allows air to circulate freely. This helps regulate temperature and prevents heat buildup — keeping your TEDDY fresh and breathable at all times.
-				</p>
+				</Heading>
 			</details>
 			<details class="group py-4">
 				<summary class="flex justify-between items-center list-none cursor-pointer">
-					<span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What is your return policy?</span>
+					<Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">What is your return policy?</Heading>
 					<span class="transition group-open:rotate-180">
 						<!-- Plus/Minus symbol -->
 						<span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -797,14 +797,14 @@ import Heading from "../components/Heading.astro";
 						</span>
 					</span>
 				</summary>
-				<p class="mt-3 group-open:animate-fadeIn">
-					We offer a 30-day return policy if you change your mind.
+				<Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"
+					>We offer a 30-day return policy if you change your mind.
 
 					<br /><br />Please be aware that returns must be made in the original packaging and the item must be intact and in the same condition as when you received it.
 
 					<br /><br />Shipping costs for the return are covered by the customer, and you are responsible for arranging the return delivery. This allows you to choose the easiest and most suitable shipping solution for you. Once we receive the item back at our warehouse, we will process your refund as quickly as possible. <br /><br />To
 					ensure a smooth return process, please keep all original packaging, as returns without it cannot be accepted.
-				</p>
+				</Heading>
 			</details>
 		</div>
 	</div>

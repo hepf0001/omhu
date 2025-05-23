@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <!------------------- Mobil ------------------->
@@ -10,7 +11,7 @@ import Button from "../components/Button.astro";
         </div>
 
         <div class="col-span-12">
-            <h4 class="text-neutral-50 leading-snug pb-5">Stay in the loop with our weekly newsletter</h4>
+            <Heading htmlheading="h1" size="h4_h2" stylingclasses="text-neutral-50 pb-2">Stay in the loop with our weekly newsletter</Heading>
             <form action="#">
                 <div class="items-center mx-auto pb-2.5 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                     <div class="relative w-full">
@@ -21,7 +22,7 @@ import Button from "../components/Button.astro";
                     </div>
                 </div>
             </form>
-            <p class="text-neutral-50 pb-5 text-ps-mobile">You can unsubscribe at any time.</p>
+            <Heading htmlheading="p" size="ps" stylingclasses="text-neutral-50 pb-10">You can unsubscribe at any time.</Heading>
             <div class="flex justify-start gap-5 pb-5">
                 <div class="w-8 flex-shrink-0">
                     <a href="https://www.facebook.com/omhucph" target="_blank"><img class="w-full transform hover:-translate-y-1 transition duration-300 ease-in-out hover:opacity-70 hover:cursor-pointer" src="/facebook.svg" alt="facebook icon" /></a>
@@ -35,12 +36,12 @@ import Button from "../components/Button.astro";
             </div>
         </div>
         <div class="col-span-12 py-5">
-            <p class="text-neutral-50 pb-5"><span class="font-bold">Email:</span> hello@omhucph.com</p>
-            <p class="text-neutral-50"><span class="font-bold">Tlf:</span> +45 31 12 26 26</p>
-            <p class="text-neutral-50 pb-5">Between 10 AM – 2 PM, CEST</p>
-            <p class="text-neutral-50 pb-5"><span class="font-bold">CVR:</span> 42822167</p>
-            <p class="text-neutral-50 pb-10">Hejrevej 33C 2400 København NV</p>
-            <p class="text-neutral-50 text-ps-mobile md:text-ps-desktop">© 2025 omhucph</p>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3"><span class="font-bold">Email:</span> hello@omhucph.com</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50"><span class="font-bold">Tlf:</span> +45 31 12 26 26</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3">Between 10 AM – 2 PM, CEST</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3"><span class="font-bold">CVR:</span> 42822167</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-6">Hejrevej 33C 2400 København NV</Heading>
+            <Heading htmlheading="p" size="ps" stylingclasses="text-neutral-50">© 2025 omhucph</Heading>
         </div>
     </section>
 </section>
@@ -50,15 +51,15 @@ import Button from "../components/Button.astro";
     <section class="grid grid-cols-12 gap-5 max-w-7xl mx-auto p-5">
         <div class="col-span-6 py-5">
             <a href="/"><img src="/logo/logo.webp" class="w-28 pb-5" alt="Omhu logo" /></a>
-            <p class="text-neutral-50 pb-5"><span class="font-bold">Email:</span> hello@omhucph.com</p>
-            <p class="text-neutral-50"><span class="font-bold">Tlf:</span> +45 31 12 26 26</p>
-            <p class="text-neutral-50 pb-5">Between 10 AM – 2 PM, CEST</p>
-            <p class="text-neutral-50 pb-5"><span class="font-bold">CVR:</span> 42822167</p>
-            <p class="text-neutral-50 pb-10">Hejrevej 33C 2400 København NV</p>
-            <p class="text-neutral-50 text-ps-desktop">© 2025 omhucph</p>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3"><span class="font-bold">Email:</span> hello@omhucph.com</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50"><span class="font-bold">Tlf:</span> +45 31 12 26 26</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3">Between 10 AM – 2 PM, CEST</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-3"><span class="font-bold">CVR:</span> 42822167</Heading>
+            <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-6">Hejrevej 33C 2400 København NV</Heading>
+            <Heading htmlheading="p" size="ps" stylingclasses="text-neutral-50">© 2025 omhucph</Heading>
         </div>
         <div class="col-span-6 py-5 place-content-center">
-            <h2 class="text-neutral-50 leading-snug pb-5">Stay in the loop with our weekly newsletter</h2>
+            <Heading htmlheading="h1" size="h4_h2" stylingclasses="text-neutral-50 pb-2">Stay in the loop with our weekly newsletter</Heading>
             <form action="#">
                 <div class="items-center mx-auto pb-2.5 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                     <div class="relative w-full md:w-5/6">
@@ -69,7 +70,7 @@ import Button from "../components/Button.astro";
                     </div>
                 </div>
             </form>
-            <p class="text-neutral-50 pb-10 text-ps-desktop">You can unsubscribe at any time.</p>
+            <Heading htmlheading="p" size="ps" stylingclasses="text-neutral-50 pb-10">You can unsubscribe at any time.</Heading>
             <div class="flex justify-start gap-5">
                 <div class="w-8 flex-shrink-0">
                     <a href="https://www.facebook.com/omhucph" target="_blank"> <img class="w-full transform hover:-translate-y-1 transition duration-300 ease-in-out hover:opacity-70 hover:cursor-pointer" src="/facebook.svg" alt="facebook icon" /></a>

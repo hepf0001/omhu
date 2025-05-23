@@ -90,10 +90,63 @@
 }
 
 @layer components{
+h1 {
+    font-family: var(--font-syne);
+    font-weight: 600;
+    color: var(--color-neutral-1000);
+  }
 
+
+    h2 {
+      font-family: var(--font-syne);
+      font-weight: 600;
+      color: var(--color-neutral-1000);
+    }
   
 
-}
+
+      h3 {
+        font-family: var(--font-syne);
+        font-weight: 600;
+        color: var(--color-neutral-1000);
+      }
+    
+
+
+        h4 {
+          font-family: var(--font-syne);
+          font-weight: 600;
+          color: var(--color-neutral-1000);
+        }
+      
+
+
+          h5 {
+            font-family: var(--font-syne);
+            font-weight: 600;
+            color: var(--color-neutral-1000);
+          }
+
+          h6 {
+            font-family: var(--font-syne);
+            font-weight: 600;
+            color: var(--color-neutral-1000);
+
+          }
+            p {
+              font-family: var(--font-urbanist);
+              font-weight: 400;
+              color: var(--color-neutral-1000);
+            }
+          
+                a {
+                  font-family: var(--font-urbanist);
+                  font-weight: 400;
+                  color: var(--color-neutral-1000);
+                }
+              
+  }
+  
 @layer utilities{
   
 }

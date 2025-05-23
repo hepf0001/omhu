@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Teddy" ogtitle="Discover Teddy in details" description="Explore the features and details of the Teddy product" ogdescription="An in-depth look at what makes the Teddy product special">
@@ -19,9 +20,9 @@ import Card from "../components/Card.astro";
                 top-[75%] translate-y-[-100%] md:top-auto md:bottom-0 md:translate-y-0 flex md:items-end">
             <div class="grid grid-cols-12 py-0 md:py-10">
                 <div class="col-span-12 md:col-span-6 pr-0 md:pr-20">
-                    <h3 class="text-neutral-50 pb-2 md:pb-5">Teddy</h3>
-                    <h5 class="text-neutral-50 pb-2 md:pb-5">12.850,00 DKK</h5>
-                    <p class="text-neutral-50 pb-2 md:pb-5">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</p>
+                    <Heading htmlheading="h1" size="h3" stylingclasses="text-neutral-50">Teddy</Heading>
+                    <Heading htmlheading="h2" size="h5" stylingclasses="text-neutral-50">12.850,00 DKK</Heading>
+                    <Heading htmlheading="p" size="p" stylingclasses="text-neutral-50 pb-5 md:pb-10">Crafted with two cold foam mattresses and angled cushions, TEDDY balances soft support and everyday flexibility. Held by chrome bars and wrapped in durable corduroy, it’s designed to move with you - and hold up beautifully.</Heading>
                     <a href="https://omhucph.com/products/teddy" target="_blank">
                         <Button variant="primary" size="medium md:large">Buy now</Button>
                     </a>
@@ -75,8 +76,8 @@ import Card from "../components/Card.astro";
     >
         <section class="grid grid-cols-12 gap-5">
             <div class="col-span-12 md:col-span-6 place-content-center">
-                <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Teddy in 21 colors</h3>
-                <h5 x-text="`Color: ${activeColor}`"></h5>
+                <Heading htmlheading="h1" size="h4_h3" stylingclasses="pb-5 md:pb-10">Teddy in 21 colors</Heading>
+                <h2 class="text-[0.875rem] md:text-[1.000rem]" x-text="`Color: ${activeColor}`"></h2>
                 <section class="flex flex-wrap gap-2.5 mt-4">
                     <template x-for="(color, index) in colors" :key="index">
                         <div class="w-9 md:w-11.5 h-9 md:h-11.5 rounded-full cursor-pointer transition-transform transform hover:scale-110" :style="`background-color: ${color.hex}`" @click="activeImage = color.image; activeColor = color.label" @mouseenter="activeImage = color.image; activeColor = color.label"></div>
@@ -91,25 +92,25 @@ import Card from "../components/Card.astro";
 
     <!------------------- Dimensions ------------------->
     <section class="p-5 max-w-7xl mx-auto">
-        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Product dimensions</h3>
+        <Heading htmlheading="h1" size="h4_h3" stylingclasses="">Product dimensions</Heading>
         <div class="grid md:grid-cols-12 gap-5">
             <img class="col-span-12 md:col-span-6" src="/teddy_dimensions.webp" alt="Teddy dimensions" />
             <div class="col-span-12 md:col-span-6 place-content-center">
                 <div class="flex justify-between border-b border-neutral-200 py-2 gap-5">
-                    <p class="font-bold">Overall size</p>
-                    <p>width 200 cm, depth 100 cm, height 70 cm</p>
+                    <Heading htmlheading="p" size="p" stylingclasses="font-bold">Overall size</Heading>
+                    <Heading htmlheading="p" size="p" stylingclasses="">width 200 cm, depth 100 cm, height 70 cm</Heading>
                 </div>
                 <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
-                    <p class="font-bold">Seat height</p>
-                    <p>34 cm</p>
+                    <Heading htmlheading="p" size="p" stylingclasses="font-bold">Seat height</Heading>
+                    <Heading htmlheading="p" size="p" stylingclasses="">34 cm</Heading>
                 </div>
                 <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
-                    <p class="font-bold">Seat depth</p>
-                    <p>65 cm</p>
+                    <Heading htmlheading="p" size="p" stylingclasses="font-bold">Seat depth</Heading>
+                    <Heading htmlheading="p" size="p" stylingclasses="">65 cm</Heading>
                 </div>
                 <div class="flex justify-between border-b border-neutral-200 py-2 pt-5">
-                    <p class="font-bold">Seating area</p>
-                    <p>130x65 cm</p>
+                    <Heading htmlheading="p" size="p" stylingclasses="font-bold">Seating area</Heading>
+                    <Heading htmlheading="p" size="p" stylingclasses="">130x65 cm</Heading>
                 </div>
             </div>
         </div>
@@ -117,13 +118,13 @@ import Card from "../components/Card.astro";
 
     <!------------------- Function ------------------->
     <section class="p-5 max-w-7xl mx-auto py-20 md:py-32">
-        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Function as</h3>
+        <Heading htmlheading="h1" size="h4_h3" stylingclasses="">Function as</Heading>
         <div class="grid md:grid-cols-12 gap-5">
             <div class="col-span-12 md:col-span-4">
                 <div class="relative">
                     <img src="/function_bed.webp" alt="Function as a bed" />
                     <div class="absolute inset-0 flex items-end p-5">
-                        <h5 class="">Bed</h5>
+                        <Heading htmlheading="h2" size="h5" stylingclasses="">Bed</Heading>
                     </div>
                 </div>
             </div>
@@ -131,7 +132,7 @@ import Card from "../components/Card.astro";
                 <div class="relative">
                     <img src="/function_conversation.webp" alt="Function as a conversation pit" />
                     <div class="absolute inset-0 flex items-end p-5">
-                        <h5 class="">Conversation pit</h5>
+                        <Heading htmlheading="h2" size="h5" stylingclasses="">Conversation pit</Heading>
                     </div>
                 </div>
             </div>
@@ -139,7 +140,7 @@ import Card from "../components/Card.astro";
                 <div class="relative">
                     <img src="/function_sofa.webp" alt="Function as a sofa" />
                     <div class="absolute inset-0 flex items-end p-5">
-                        <h5 class="">Sofa</h5>
+                        <Heading htmlheading="h2" size="h5" stylingclasses="">Sofa</Heading>
                     </div>
                 </div>
             </div>
@@ -148,11 +149,11 @@ import Card from "../components/Card.astro";
 
     <!------------------- FAQ ------------------->
     <div class="w-full max-w-3xl p-5 mx-auto">
-        <h3 class="text-h4-mobile md:text-h3-desktop pb-5 md:pb-10">Got questions? We’ve got answers!</h3>
+        <Heading htmlheading="h1" size="h4_h3" stylingclasses="pb-5 md:pb-10">Got questions? We’ve got answers!</Heading>
         <div class="grid max-w-5xl mx-auto divide-y divide-neutral-200">
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">What materials is the TEDDY sofa made of?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">What materials is the TEDDY sofa made of?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -161,14 +162,14 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
                     The TEDDY sofa is upholstered with high-quality corduroy fabric for a soft and cozy feel. It also features durable chrome-plated iron bars for added strength and support. The mattresses, crafted from high-grade cold foam, strike a balance between firm support and comfort for both sitting and sleeping. TEDDY is swathed in plush
-                    corduroy fabric known for its exceptional quality and durability.
-                </p>
+                    corduroy fabric known for its exceptional quality and durability.</Heading
+                >
             </details>
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Does the TEDDY sofa require assembly?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Does the TEDDY sofa require assembly?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -177,13 +178,14 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">
-                    Only minimal assembly is required. The metal bars come in two pieces that can be easily screwed together by hand—no tools needed! You can add felt pads to the metal bars to make them more slip resistant and protect your floor. The rest of the sofa requires no assembly, so you can enjoy it right away.
-                </p>
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
+                    Only minimal assembly is required. The metal bars come in two pieces that can be easily screwed together by hand—no tools needed! You can add felt pads to the metal bars to make them more slip resistant and protect your floor. The rest of the sofa requires no assembly, so you can enjoy it right away.Only minimal assembly is
+                    required. The metal bars come in two pieces that can be easily screwed together by hand—no tools needed! You can add felt pads to the metal bars to make them more slip resistant and protect your floor. The rest of the sofa requires no assembly, so you can enjoy it right away.</Heading
+                >
             </details>
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How do I convert the TEDDY sofa into a bed?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How do I convert the TEDDY sofa into a bed?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -192,11 +194,13 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">Converting the TEDDY sofa into a bed is quick and easy: <br /><br /><span class="font-bold">1. Fold out the sofa</span> by moving the top mattress to the floor. <br /><br /><span class="font-bold">2. Secure the mattresses</span> using the Velcro slaps to keep them in place.</p>
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">
+                    Converting the TEDDY sofa into a bed is quick and easy: <br /><br /><span class="font-bold">1. Fold out the sofa</span> by moving the top mattress to the floor. <br /><br /><span class="font-bold">2. Secure the mattresses</span> using the Velcro slaps to keep them in place.</Heading
+                >
             </details>
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">How do I clean and maintain the TEDDY sofa?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">How do I clean and maintain the TEDDY sofa?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -205,11 +209,11 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">The fabric covers on both cushions and mattresses can be easily unzipped and removed for washing. We recommend washing at a maximum of 30°C with a mild, extra-gentle detergent. For best results, turn the fabric inside out before washing.</p>
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn"> The fabric covers on both cushions and mattresses can be easily unzipped and removed for washing. We recommend washing at a maximum of 30°C with a mild, extra-gentle detergent. For best results, turn the fabric inside out before washing.</Heading>
             </details>
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Is the TEDDY sofa suitable for daily use as a bed?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Is the TEDDY sofa suitable for daily use as a bed?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -218,11 +222,11 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">Absolutely! The mattresses are made from high-grade cold foam, designed for both sitting and sleeping. Their firmness ensures durability, meaning they will maintain their shape even with daily use as a bed.</p>
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">Absolutely! The mattresses are made from high-grade cold foam, designed for both sitting and sleeping. Their firmness ensures durability, meaning they will maintain their shape even with daily use as a bed.</Heading>
             </details>
             <details class="group py-4">
                 <summary class="flex justify-between items-center list-none cursor-pointer">
-                    <span class="text-neutral-1000 text-p-mobile md:text-p-desktop font-semibold">Can I try the TEDDY sofa in-store before purchasing?</span>
+                    <Heading htmlheading="h2" size="h6" stylingclasses="font-semibold">Can I try the TEDDY sofa in-store before purchasing?</Heading>
                     <span class="transition group-open:rotate-180">
                         <!-- Plus/Minus symbol -->
                         <span class="text-neutral-1000 text-h5-mobile md:text-h5-desktop">
@@ -231,7 +235,7 @@ import Card from "../components/Card.astro";
                         </span>
                     </span>
                 </summary>
-                <p class="mt-3 group-open:animate-fadeIn">You are always welcome to visit our showrooms. Find the one nearest you <a href="https://omhucph.com/pages/showroom" target="_blank" class="underline text-blue-700">here</a>.</p>
+                <Heading htmlheading="p" size="p" stylingclasses="mt-3 group-open:animate-fadeIn">You are always welcome to visit our showrooms. Find the one nearest you <a href="https://omhucph.com/pages/showroom" target="_blank" class="underline text-blue-700">here</a>.</Heading>
             </details>
         </div>
     </div>
@@ -241,7 +245,7 @@ import Card from "../components/Card.astro";
         <!-- Header med titel og knapper -->
         <div class="flex justify-between items-center pb-5 md:pb-10 relative">
             <!-- Overskrift -->
-            <h2 class="text-h4-mobile md:text-h3-desktop">You might also like</h2>
+            <Heading htmlheading="h1" size="h4_h3" stylingclasses="">You might also like</Heading>
 
             <!-- Pilene – vertikalt centreret med overskriften -->
             <div class="flex items-center gap-5 h-full">
@@ -270,16 +274,14 @@ import Card from "../components/Card.astro";
         <!-- Slide 2 -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-5" x-show="slidenr === 'two'" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
             <Card url="/teddy" cardimage="/teddy_chair_sage.webp" cardimagealt="Teddy chair sage" miljobillede="/shop_the_look_teddy_chair.webp" miljobilledealt="Teddy chair sage miljøbillede" produktnavn="Teddy Chair" produktpris="7.495,00 DKK" />
-            <Card url="/teddy" cardimage="/upgrade_teddy_plus_card.webp" cardimagealt="Upgrade" miljobillede="/upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
+            <Card url="/teddy" cardimage="/upgrade_closed.webp" cardimagealt="Upgrade" miljobillede="/upgrade_corner_closed_card.webp" miljobilledealt="Upgrade" produktnavn="Upgrade" produktpris="From 6.500,00 DKK" />
 
             <div class="hidden md:block">
-                <Card url="/teddy" cardimage="/pillows_rust.webp" cardimagealt="Pillows rust" miljobillede="/pillows_collection.webp" miljobilledealt="Pillows rust miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
+                <Card url="/teddy" cardimage="/pillows.webp" cardimagealt="Pillows" miljobillede="/pillows_lavender.webp" miljobilledealt="Pillows lavender miljøbillede" produktnavn="Pillows" produktpris="850,00 DKK" />
             </div>
             <div class="hidden md:block">
                 <Card url="/teddy" cardimage="/teddy_plus_turquoise.webp" cardimagealt="Teddy plus turquoise" miljobillede="/shop_the_look_teddy_plus.webp" miljobilledealt="Teddy plus turquoise miljøbillede" badgenyhed="true" produktnavn="Teddy Plus" produktpris="18.200,00 DKK" />
             </div>
         </div>
     </section>
-
-    <style></style>
 </MainLayout>
