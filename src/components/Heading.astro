@@ -1,0 +1,15 @@
+---
+// Henter parametrene fra Astro.props
+const { htmlheading = "h2", size = "medium", stylingclasses = "" } = Astro.props;
+const Htmlheading = htmlheading;
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
+const sizeClasses = {
+    xlarge: "text-6xl lg:text-8xl font-family: var(--font-urbanist) text-n",
+    large: "text-4xl font-family: var(--font-syne)",
+    medium: "text-xl font-family: var(--font-syne)",
+    small: "text-base font-bold font-family: var(--font-syne)",
+};
+---
+
+<Htmlheading class:list={[sizeClasses[size], stylingclasses]}><slot /></Htmlheading>
