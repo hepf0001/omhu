@@ -92,14 +92,14 @@
 @layer components{
 h1 {
     font-family: var(--font-syne);
-    font-weight: 600;
+    font-weight: bold;
     color: var(--color-neutral-1000);
   }
 
 
     h2 {
       font-family: var(--font-syne);
-      font-weight: 600;
+      font-weight: bold;
       color: var(--color-neutral-1000);
     }
   
@@ -107,7 +107,7 @@ h1 {
 
       h3 {
         font-family: var(--font-syne);
-        font-weight: 600;
+        font-weight: bold;
         color: var(--color-neutral-1000);
       }
     
@@ -115,7 +115,7 @@ h1 {
 
         h4 {
           font-family: var(--font-syne);
-          font-weight: 600;
+          font-weight: bold;
           color: var(--color-neutral-1000);
         }
       
@@ -123,13 +123,13 @@ h1 {
 
           h5 {
             font-family: var(--font-syne);
-            font-weight: 600;
+            font-weight: bold;
             color: var(--color-neutral-1000);
           }
 
           h6 {
             font-family: var(--font-syne);
-            font-weight: 600;
+            font-weight: bold;
             color: var(--color-neutral-1000);
 
           }
